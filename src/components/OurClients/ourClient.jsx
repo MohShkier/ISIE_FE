@@ -15,7 +15,7 @@ const OurClient = () => {
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             autoplay={{ delay: 1500, disableOnInteraction: true }}
-            spaceBetween={80}
+            spaceBetween={40}
             breakpoints={{
               310: { slidesPerView: 2 },
               510: { slidesPerView: 2 },
