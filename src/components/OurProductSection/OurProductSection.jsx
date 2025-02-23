@@ -12,7 +12,7 @@ const ProductSection = () => {
       <div className="w-full flex flex-col items-center mt-10">
         <div className="flex items-center w-full max-w-7xl px-4">
           <div className="flex-grow border-t border-gray-400"></div>
-          <h2 className="mx-4 text-[#1D2736] font-[gurajada] text-5xl">Our Products</h2>
+          <h2 className="mx-4 text-[#1D2736] text-2xl xl:text-5xl">Our Products</h2>
           <div className="flex-grow border-t border-gray-400"></div>
         </div>
 
