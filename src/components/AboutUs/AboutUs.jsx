@@ -15,17 +15,18 @@ function AboutUs() {
                     <div className="absolute inset-0 bg-[#1D2736]/80"></div>
 
                     {/* Text Content (Above Overlay) */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 gap-10">
                         <h1 className="text-white text-3xl md:text-5xl font-bold">About Us</h1>
                         <p className="text-white text-lg md:text-xl mt-2 max-w-[90%] md:max-w-[60%]">
                             ISIE is a company specializing in industrial equipment.
                             <br />
+                            
                             Our company has been operating since 2014.
                         </p>
                     </div>
                 </div>
             </div>
- <div className="relative bg-gray-100 py-20 px-6 lg:px-24 flex items-center min-h-[600px] lg:min-h-[550px]">
+ <div className="relative bg-gray-100 py-20 px-6 lg:px-24 flex items-center min-h-[650px] lg:min-h-[800px]">
     {/* Background Decorations */}
     <div className="absolute inset-0 overflow-hidden">
         {/* Circles */}
@@ -44,19 +45,19 @@ function AboutUs() {
     {/* Content */}
     <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
         <div className="flex flex-col justify-center text-left  md:text-left gap-4">
-            <h2 className="text-3xl font-bold text-gray-800 xl:text-left text-center">Mission</h2>
-           <div className="flex flex-col gap-5 justify-center">
-           <p className="text-gray-600 mt-4">
-                At ISIE, our mission is to provide high-quality industrial equipment 
-            </p>
-            <p>
-            that enhances efficiency,
-            safety, and productivity in the mining and
-            </p>
-            <p>
-             industrial sectors.
+            <h2 className="text-5xl font-bold text-gray-800 xl:text-left text-center">Mission</h2>
+           <div className="flex flex-col gap-5 justify-center text-2xl">
+                <p className=" mt-4">
+                        At ISIE, our mission is to provide high-quality industrial equipment 
+                    </p>
+                    <p>
+                    that enhances efficiency,
+                    safety, and productivity in the mining and
+                    </p>
+                    <p>
+                    industrial sectors.
 
-            </p>
+                    </p>
            </div>
         </div>
 
@@ -67,7 +68,7 @@ function AboutUs() {
     </div>
 </div>
 
-<div className="relative bg-gray-900 text-white py-24 px-6 lg:px-32 flex items-center min-h-[650px] lg:min-h-[800px]">
+<div className="relative bg-gray-900 text-white py-20 px-6 lg:px-24 flex items-center min-h-[650px] lg:min-h-[800px]">
     {/* Background Decorations */}
     <div className="absolute inset-0 overflow-hidden">
         {/* Large Circle (Top Center, Slightly Right) */}
@@ -89,11 +90,11 @@ function AboutUs() {
     </div>
 
     {/* Content */}
-    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
+    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
         {/* Left Side: Vision Text */}
-        <div className="flex flex-col justify-center text-left md:text-left">
-            <h2 className="text-3xl font-bold text-white text-center md:text-left">Vision</h2>
-           <div className="flex flex-col gap-1 justify-center">
+        <div className="flex flex-col justify-center text-left  md:text-left gap-4">
+            <h2 className="text-5xl font-bold text-white xl:text-left text-center">Vision</h2>
+           <div className="flex flex-col gap-1 justify-center text-2xl">
            <p className="text-gray-300 mt-4 leading-relaxed">
             Our vision is to drive progress in the mining and industrial 
             </p>
@@ -112,7 +113,7 @@ function AboutUs() {
 
         {/* Right Side: Illustration */}
         <div className="flex justify-center">
-            <img src="vision.png" alt="Vision Illustration" className="w-[90%] max-w-md lg:max-w-lg" />
+            <img src="vision.png" alt="Vision Illustration" className="w-4/5 max-w-md" />
         </div>
     </div>
 </div>
@@ -121,7 +122,7 @@ function AboutUs() {
 
 
 
-<div className="relative bg-gray-100 py-20 px-6 lg:px-24 flex items-center min-h-[600px] lg:max-h-[350px]">
+<div className="relative bg-gray-100 py-20 px-6 lg:px-24 flex items-center min-h-[600px] lg:max-h-[800px]">
     {/* Background Decorations */}
     <div className="absolute inset-0 overflow-hidden">
         {/* Circles */}
@@ -140,9 +141,9 @@ function AboutUs() {
     {/* Content */}
     <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
         <div className="flex flex-col justify-center text-left  md:text-left gap-4">
-            <h2 className="text-3xl font-bold text-gray-800 xl:text-left text-center">Why Are We Here ?</h2>
-           <div className="flex flex-col gap-5 justify-center">
-           <p className="text-gray-600 mt-4">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 xl:text-left text-center">Why Are We Here ?</h2>
+           <div className="flex flex-col gap-5 justify-center text-2xl">
+           <p className=" mt-4">
                 At ISIE, our mission is to provide high-quality industrial equipment 
             </p>
             <p>
@@ -157,8 +158,8 @@ function AboutUs() {
         </div>
 
         {/* Illustration */}
-        <div className="flex justify-center">
-            <img src="why.png" alt="Mission Illustration" className="w-4/5 max-w-md" />
+        <div className="flex justify-center pl-14">
+            <img src="why.png" alt="Mission Illustration" className="w-4/5 max-w-sm" />
         </div>
     </div>
 </div>

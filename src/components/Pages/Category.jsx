@@ -1,38 +1,78 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { motion } from "framer-motion";
+
+const slideInVariants = {
+  hidden: { opacity: 0, x: 50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
 
 function CategoryPage() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:8000/api/home", {
+          withCredentials: true, // Allows cookies/session handling if needed
+        });
+        setData(response.data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) return <p className="text-center mt-10">Loading...</p>;
+  if (error) return <p className="text-center text-red-500 mt-10">Error: {error}</p>;
+
   return (
-    <>
-    <div className="w-full flex flex-col items-center mt-20 lg:mb-10 mb-20">
-            <div className="flex items-center w-full max-w-7xl px-4">
-            <h2 className="mx-4 text-5xl  text-gray-800 font-[gurajada] ml-10">Categories</h2>
+    <div className="w-full flex flex-col items-center mt-20 lg:mb-10 mb-20 min-h-screen pt-24">
+      <div className="flex items-center w-full max-w-7xl px-4">
+        <h2 className="mx-4 text-5xl text-gray-800 font-[gurajada] ml-10">Categories</h2>
+      </div>
 
-            </div>
+      <div className="mt-12 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 gap-8 w-full max-w-7xl px-12">
+        {data?.categories && Array.isArray(data.categories) && data.categories.length > 0 ? (
+          data.categories.map((category, index) => (
+            <motion.div
+              key={index}
+              variants={slideInVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="flex flex-col items-center"
+            >
+              <img
+                src={category.thumbnail}
+                alt={category.name}
+                className="rounded-[2.5rem] shadow-[2px_2px_40px_2px_rgba(0,0,0,0.25)] w-full"
+              />
 
-            <div className="mt-12 grid lg:grid-cols-3 grid-cols-2 md:grid-cols-3 xl:gap-16 gap-x-6 gap-y-16 w-full max-w-7xl px-12">
-    {[
-        { img: "img1.jpeg", title: "آلة تنظيف السبانخ التجارية للبيع" },
-        { img: "img5.jpeg", title: "آلة تنظيف السبانخ التجارية للبيع" },
-        { img: "img6.jpeg", title: "آلة تنظيف السبانخ التجارية للبيع" },
-        { img: "img2.jpeg", title: "غسالة الخضار / موز تفاح خضار فواكه ساعة آلة تنظيف البنجر للبيع" },
-        { img: "img3.jpeg", title: "آلة تنظيف غسالات الثوم المقشر التجارية" },
-        { img: "img4.jpeg", title: "آلة تنظيف غسالة الهواء فقاعة الذرة الحلوة السعر" },
-    ].map((item, index) => (
-        <div
-        key={index}
-        className=" flex flex-col justify-between items-center h-full "
-        >
-        <img src={item.img} className="rounded-3xl xl:rounded-[40px]  shadow-[2px_2px_40px_2px_rgba(0,0,0,0.25)]" />
-        <p className="text-center font-bold pt-3 flex-grow">{item.title}</p>
-        <div className="w-full flex justify-center mt-6">
-            <div className="bg-[#1D2736]  rounded-full xl:rounded-[45px] w-[10rem] text-white text-center px-4 py-2 xl:px-8 xl:py-2">
-            More Details
-            </div>
-        </div>
-        </div>
-    ))}
+              {/* Category Name with Fixed Height */}
+              <p className="text-center font-bold pt-3 min-h-[50px] flex items-center justify-center">
+                {category.name}
+              </p>
+
+              {/* Button Wrapper to Keep Alignment */}
+              <div className="w-full flex justify-center mt-auto pt-4">
+                <div className="bg-[#1D2736] rounded-full text-white text-center px-6 py-2">
+                  More Details
+                </div>
+              </div>
+            </motion.div>
+          ))
+        ) : (
+          <p className="text-center text-gray-500 col-span-full">No Categories available</p>
+        )}
+      </div>
     </div>
-
-        </div>  </>
   );
 }
 

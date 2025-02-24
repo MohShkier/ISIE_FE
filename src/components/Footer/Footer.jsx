@@ -5,14 +5,14 @@ import { FaLocationDot } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0a192f] text-white py-10">
+    <footer className="bg-[#0a192f] text-white py-10 " dir="ltr">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
         
         {/* Logo Section */}
         <div className="flex justify-center md:justify-start py-10">
           <div className="relative flex items-center justify-center w-44 h-32">
             <div className="absolute flex items-center justify-center">
-              <img src="logo1.png" alt="Company Logo" className="w-full h-auto" />
+              <img src="/logo1.png" alt="Company Logo" className="w-full h-auto" />
             </div>
           </div>
         </div>
