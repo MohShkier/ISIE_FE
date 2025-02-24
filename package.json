@@ -27,7 +27,7 @@
     "jwt-decode": "^4.0.0",
     "lucide-react": "^0.475.0",
     "path": "^0.12.7",
-    "react": "^18.3.1",
+    "react": "^19.0.0",
     "react-apexcharts": "^1.7.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
