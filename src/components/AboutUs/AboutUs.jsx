@@ -1,4 +1,5 @@
 import React from "react";
+import OurClient from "../OurClients/ourClient";
 
 function AboutUs() {
     return (
@@ -164,6 +165,7 @@ function AboutUs() {
     </div>
 </div>
 
+<OurClient/>
         </>
     );
 }
