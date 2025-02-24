@@ -15,7 +15,7 @@ const BottomBar = () => {
   ];
 
   return (
-    <div className="lg:hidden !z-[99] fixed bottom-0 left-1/2 -translate-x-1/2 w-[100%] bg-[#131b27] flex items-center justify-between px-6 py-3 shadow-lg">
+    <div className="lg:hidden !z-[99] fixed bottom-0 left-1/2 -translate-x-1/2 w-[100%] bg-[#131b27] flex items-center justify-between px-6 py-3 shadow-lg ">
       {tabs.map((tab) => (
         <div key={tab.id} className="relative flex items-center justify-center w-full">
           {location.pathname === tab.path && (

@@ -5,7 +5,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0a192f] text-white py-10 " dir="ltr">
+    <footer className="bg-[#0a192f] text-white py-10 relative" dir="ltr">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
         
         {/* Logo Section */}
@@ -41,10 +41,17 @@ const Footer = () => {
           <p className="leading-relaxed">شركة متخصصة بتصنيع وتركيب خطوط إنتاج</p>
           <p className="leading-relaxed">مكائن تعبئة وتغليف - حلول هندسية</p>
         </div>
-
       </div>
+
+      {/* Gear Image Positioned to Bottom Right */}
+      <img 
+        src="gearFooter.png" 
+        className="md:absolute right-0 bottom-0 size-28 hidden "
+        alt="Gear Decoration"
+      />
     </footer>
   );
 };
 
 export default Footer;
+

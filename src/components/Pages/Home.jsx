@@ -13,7 +13,7 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://isie-management-system.onrender.com/api/home", {
+        const response = await axios.get("http://localhost:8000/api/home", {
           withCredentials: true, // Allows cookies/session handling if needed
         });
         setData(response.data);

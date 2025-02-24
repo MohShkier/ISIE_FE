@@ -7,6 +7,15 @@ const slideInVariants = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
+// Skeleton Component
+const SkeletonCard = () => (
+  <div className="animate-pulse flex flex-col items-center">
+    <div className="w-full h-48 bg-gray-300 rounded-[2.5rem]"></div>
+    <div className="h-6 w-3/4 bg-gray-300 rounded mt-3"></div>
+    <div className="h-10 w-2/3 bg-gray-300 rounded-full mt-4"></div>
+  </div>
+);
+
 function CategoryPage() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -15,7 +24,7 @@ function CategoryPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://isie-management-system.onrender.com/api/home", {
+        const response = await axios.get("https://isie-management-system.onrender.com//api/home", {
           withCredentials: true, // Allows cookies/session handling if needed
         });
         setData(response.data);
@@ -29,9 +38,6 @@ function CategoryPage() {
     fetchData();
   }, []);
 
-  if (loading) return <p className="text-center mt-10">Loading...</p>;
-  if (error) return <p className="text-center text-red-500 mt-10">Error: {error}</p>;
-
   return (
     <div className="w-full flex flex-col items-center mt-20 lg:mb-10 mb-20 min-h-screen pt-24">
       <div className="flex items-center w-full max-w-7xl px-4">
@@ -39,7 +45,12 @@ function CategoryPage() {
       </div>
 
       <div className="mt-12 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 gap-8 w-full max-w-7xl px-12">
-        {data?.categories && Array.isArray(data.categories) && data.categories.length > 0 ? (
+        {loading ? (
+          // Show skeleton loader while loading
+          [...Array(8)].map((_, index) => <SkeletonCard key={index} />)
+        ) : error ? (
+          <p className="text-center text-red-500 col-span-full">Error: {error}</p>
+        ) : data?.categories && Array.isArray(data.categories) && data.categories.length > 0 ? (
           data.categories.map((category, index) => (
             <motion.div
               key={index}
