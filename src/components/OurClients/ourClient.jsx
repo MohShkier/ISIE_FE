@@ -16,7 +16,7 @@ const OurClient = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/sponsors", {
+        const response = await axios.get("https://isie-management-system.onrender.com/api/sponsors", {
           withCredentials: true,
         });
         setData(response.data); // Ensure this is an array
