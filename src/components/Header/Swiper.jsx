@@ -23,7 +23,7 @@ const HeaderSwiper = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="flex justify-center items-center xl:mt-12 mt-10 rounded-3xl"
+      className="flex justify-center items-center !bg-[#EEE] xl:pt-12 !pt-44 rounded-3xl"
     >
       <div className="w-[90%] p-4 rounded-3xl relative">
         <Swiper

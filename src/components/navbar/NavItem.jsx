@@ -7,7 +7,7 @@ function NavItem() {
         { to: "/", label: "Home" },
         { to: "/categories", label: "Categories" },
         { to: "/products", label: "Our Products" },
-        { to: "/contact", label: "Contact Us" },
+        { to: "/contactus", label: "Contact Us" },
         { to: "/about", label: "About Us" },
       ].map((item) => (
         <li key={item.to}>

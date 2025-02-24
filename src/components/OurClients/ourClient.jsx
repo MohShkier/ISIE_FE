@@ -57,10 +57,10 @@ const OurClient = () => {
 
           {/* Navigation Buttons */}
           <div className="flex justify-center flex-row gap-12 mt-8">
-          <button className="custom-prev  bg-gray-800 text-white p-2 px-4 rounded-full shadow-lg z-10 hover:bg-gray-700 transition">
+          <button className="custom-prev  bg-gray-800 text-white p-2 px-4 rounded-full shadow-lg  hover:bg-gray-700 transition">
           ❮
           </button>
-          <button className="custom-next    bg-gray-800 text-white p-2 px-4 rounded-full shadow-lg z-10 hover:bg-gray-700 transition">
+          <button className="custom-next    bg-gray-800 text-white p-2 px-4 rounded-full shadow-lg  hover:bg-gray-700 transition">
             ❯
           </button>
           </div>
