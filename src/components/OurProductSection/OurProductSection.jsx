@@ -20,7 +20,7 @@ const ProductSection = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://isie-management-system.onrender.com/api/home", {
+        const response = await axios.get("http://localhost:8000/api/home", {
           withCredentials: true,
         });
         console.log("Fetched Data:", response.data);
@@ -39,7 +39,7 @@ const ProductSection = () => {
   return (
     <>
       {/* Products Section */}
-      <div className="w-full flex flex-col items-center mt-10">
+      <div className="w-full flex flex-col items-center lg:mt-10 ">
         <motion.div
           className="flex items-center w-full max-w-7xl px-4"
           initial="hidden"
@@ -52,7 +52,7 @@ const ProductSection = () => {
         </motion.div>
 
         <motion.div
-          className="grid lg:grid-cols-4 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-7xl px-12 mt-16"
+          className="grid lg:grid-cols-4 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-7xl px-12 lg:mt-16 mt-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
@@ -60,7 +60,7 @@ const ProductSection = () => {
           {loading
             ? Array.from({ length: 4 }).map((_, index) => (
                 <motion.div key={index} className="animate-pulse">
-                  <div className="rounded-[2.5rem] bg-gray-300 h-40 w-full"></div>
+                  <div className="rounded-[1.5rem] bg-gray-300 h-40 w-full"></div>
                   <div className="h-6 bg-gray-300 rounded w-3/4 mx-auto mt-3"></div>
                 </motion.div>
               ))
@@ -71,7 +71,7 @@ const ProductSection = () => {
                       <img
                         src={product.thumbnail}
                         alt={product.name}
-                        className="rounded-[2.5rem] shadow-[2px_2px_40px_2px_rgba(0,0,0,0.25)] w-full"
+                        className="lg:rounded-[2.5rem] rounded-[1.5rem] lg:shadow-[2px_2px_40px_2px_rgba(0,0,0,0.25)] shadow-[0.5px_0.5px_40px_0.5px_rgba(0,0,0,0.25)] w-full"
                       />
                       <p className="text-center font-bold pt-3">{product.name}</p>
                     </Link>
@@ -84,7 +84,7 @@ const ProductSection = () => {
       </div>
 
       {/* Categories Section */}
-      <div className="w-full flex flex-col items-center pt-44 lg:mb-10 mb-20">
+      <div className="w-full flex flex-col items-center lg:pt-28  pt-12 lg:mb-10 mb-20">
         <motion.div
           className="flex items-center w-full max-w-7xl px-4"
           initial="hidden"
@@ -105,7 +105,7 @@ const ProductSection = () => {
           {loading
             ? Array.from({ length: 4 }).map((_, index) => (
                 <motion.div key={index} className="animate-pulse flex flex-col items-center">
-                  <div className="rounded-[2.5rem] bg-gray-300 h-40 w-full"></div>
+                  <div className="rounded-[1.5rem] bg-gray-300 h-40 w-full"></div>
                   <div className="h-6 bg-gray-300 rounded w-3/4 mx-auto mt-3"></div>
                   <div className="w-1/2 h-8 bg-gray-300 rounded mt-5"></div>
                 </motion.div>
@@ -124,7 +124,7 @@ const ProductSection = () => {
                     <img
                       src={category.thumbnail}
                       alt={category.name}
-                      className="rounded-[2.5rem] shadow-[2px_2px_40px_2px_rgba(0,0,0,0.25)] w-full"
+                      className="lg:rounded-[2.5rem] rounded-[1.5rem] lg:shadow-[2px_2px_40px_2px_rgba(0,0,0,0.25)] shadow-[0.5px_0.5px_20px_0.5px_rgba(0,0,0,0.25)] w-full"
                     />
                     <p className="text-center font-bold pt-3 min-h-[50px] flex items-center justify-center">
                       {category.name}

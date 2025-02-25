@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function NavItem() {
   return (
-    <ul className="flex space-x-4 text-white flex-row items-center gap-x-1">
+    <ul className="flex  text-white flex-row items-center gap-x-1">
       {[
         { to: "/", label: "Home" },
         { to: "/categories", label: "Categories" },

@@ -20,7 +20,7 @@ function OurProductsPage() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-              `https://isie-management-system.onrender.com/api/products?page=${currentPage}`,
+              `http://localhost:8000/api/products?page=${currentPage}`,
           { withCredentials: true }
         );
         setData(response.data);
@@ -35,7 +35,7 @@ function OurProductsPage() {
   }, [currentPage]);
 
   return (
-    <div className="w-full flex flex-col items-center pt-44 lg:mb-10 mb-20 min-h-screen">
+    <div className="w-full flex flex-col items-center pt-36 lg:pt-44 lg:mb-10 mb-20 min-h-screen">
       <div className="flex items-center w-full max-w-7xl px-4">
         <h2 className="mx-4 text-5xl text-gray-800 font-[gurajada] ml-10">
           Our Products
@@ -52,7 +52,7 @@ function OurProductsPage() {
             <Link key={product._id} to={`/product-details/${product._id}`} className="flex flex-col justify-between items-center h-full">
               <img
                 src={product.thumbnail}
-                className="rounded-3xl xl:rounded-[40px] shadow-[2px_2px_40px_2px_rgba(0,0,0,0.25)]"
+                className="rounded-3xl lg:rounded-[2.5rem] lg:shadow-[2px_2px_40px_2px_rgba(0,0,0,0.25)] shadow-[0.5px_0.5px_20px_0.5px_rgba(0,0,0,0.25)]"
                 alt={product.name}
               />
               <p className="text-center font-bold pt-3 flex-grow">{product.name}</p>

@@ -5,7 +5,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0a192f] text-white py-10 relative" dir="ltr">
+    <footer className="bg-[#0a192f] text-white py-10 relative max-lg:!pb-24" dir="ltr">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
         
         {/* Logo Section */}

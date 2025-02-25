@@ -11,7 +11,7 @@ function SimilarProducts({ categoryId }) {
         const fetchSimilarProducts = async () => {
             try {
                 setLoading(true);
-                const response = await fetch(`https://isie-management-system.onrender.com/api/categories/${categoryId}/products`);
+                const response = await fetch(`http://localhost:8000/api/categories/${categoryId}/products`);
                 if (!response.ok) throw new Error("Failed to fetch products");
 
                 const data = await response.json();
@@ -28,7 +28,7 @@ function SimilarProducts({ categoryId }) {
 
 
     return (
-        <div className="w-full flex flex-col items-center mt-20 lg:mb-10 mb-20">
+        <div className="w-full flex flex-col items-center mt-20 lg:mb-10 mb-20 !min-h-screen">
             <div className="flex items-center w-full max-w-7xl px-4">
                 <div className="flex-grow border-t border-gray-400"></div>
                 <h2 className="mx-4 text-5xl text-gray-800 font-[gurajada]">Similar Products</h2>

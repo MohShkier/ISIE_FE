@@ -24,7 +24,7 @@ function CategoryPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://isie-management-system.onrender.com//api/home", {
+        const response = await axios.get("http://localhost:8000/api/home", {
           withCredentials: true, // Allows cookies/session handling if needed
         });
         setData(response.data);
@@ -39,7 +39,7 @@ function CategoryPage() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col items-center mt-20 lg:mb-10 mb-20 min-h-screen pt-24">
+    <div className="w-full flex flex-col items-center mt-20 lg:mb-10 mb-20 min-h-screen lg:pt-24 pt-16">
       <div className="flex items-center w-full max-w-7xl px-4">
         <h2 className="mx-4 text-5xl text-gray-800 font-[gurajada] ml-10">Categories</h2>
       </div>
@@ -63,7 +63,7 @@ function CategoryPage() {
               <img
                 src={category.thumbnail}
                 alt={category.name}
-                className="rounded-[2.5rem] shadow-[2px_2px_40px_2px_rgba(0,0,0,0.25)] w-full"
+                className="lg:rounded-[2.5rem] rounded-[1.5rem] lg:shadow-[2px_2px_40px_2px_rgba(0,0,0,0.25)] shadow-[0.5px_0.5px_20px_0.5px_rgba(0,0,0,0.25)] w-full"
               />
 
               {/* Category Name with Fixed Height */}

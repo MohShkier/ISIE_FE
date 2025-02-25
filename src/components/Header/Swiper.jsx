@@ -23,7 +23,7 @@ const HeaderSwiper = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="flex justify-center items-center !bg-[#EEE] xl:pt-12 !pt-44 rounded-3xl"
+      className="flex justify-center items-center !bg-[#EEE] lg:pt-44 pt-28 rounded-3xl"
     >
       <div className="w-[90%] p-4 rounded-3xl relative">
         <Swiper
@@ -57,7 +57,7 @@ const HeaderSwiper = () => {
             </SwiperSlide>
           ))}
           
-          <div className="swiper-pagination absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 flex gap-2"></div>
+          <div className="swiper-pagination absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 flex"></div>
 
           {/* Custom Navigation Arrows */}
           <motion.button
