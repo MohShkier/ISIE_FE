@@ -20,7 +20,7 @@ function OurProductsPage() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-              `http://localhost:8000/api/products?page=${currentPage}`,
+              `https://isie-management-system.onrender.com/api/products?page=${currentPage}`,
           { withCredentials: true }
         );
         setData(response.data);
