@@ -11,7 +11,7 @@ function SimilarProducts({ categoryId }) {
         const fetchSimilarProducts = async () => {
             try {
                 setLoading(true);
-                const response = await fetch(`http://localhost:8000/api/categories/${categoryId}/products`);
+                const response = await fetch(`https://isie-management-system.onrender.com/api/categories/${categoryId}/products`);
                 if (!response.ok) throw new Error("Failed to fetch products");
 
                 const data = await response.json();
