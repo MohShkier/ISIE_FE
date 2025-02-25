@@ -18,7 +18,7 @@ const OurClient = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(process.env.FETCH_URL+"/api/sponsors", {
+       const response = await axios.get(process.env.FETCH_URL+"/api/sponsors", {
           withCredentials: true,
         });
         setData(response.data || []);
