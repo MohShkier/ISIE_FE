@@ -13,9 +13,13 @@ import ProductImgSwiper from "./components/SignleProduct/ProductsImgSwiper";
 import ProductsDetails from "./components/SignleProduct/ProductsDetails";
 import ContactUsForm from "./components/Pages/ContactUsPage";
 import AboutUs from "./components/AboutUs/AboutUs";
+import ScrollToTop from "./components/ScrollToTop";
+
 function App() {
   return (
     <Router>
+          <ScrollToTop/>
+
     <div className="!bg-[#EEE]">
       <NavBar />
       <BottomBar />
