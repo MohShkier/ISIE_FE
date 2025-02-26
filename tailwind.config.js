@@ -24,6 +24,9 @@ module.exports = {
       backgroundImage: {
         'hero-pattern': "url('/bg.jpg')",
       },
+      fontFamily: {
+        custom: ['MyCustomFont', 'sans-serif'],
+      },
     },
   },
   plugins: [require('@tailwindcss/line-clamp')],

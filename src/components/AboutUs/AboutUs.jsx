@@ -17,7 +17,7 @@ function AboutUs() {
 
                     {/* Text Content (Above Overlay) */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 gap-10">
-                        <h1 className="text-white text-7xl font-[gurajada]">About Us</h1>
+                        <h1 className="text-white text-7xl font-[custom]]">About Us</h1>
                         <p className="text-white text-lg md:text-xl mt-2 max-w-[90%] md:max-w-[60%]">
                             ISIE is a company specializing in industrial equipment.
                             <br />
@@ -46,7 +46,7 @@ function AboutUs() {
                 {/* Content */}
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
   <div className="flex flex-col justify-center text-left md:text-left gap-4">
-    <h2 className="text-7xl font-[gurajada] text-gray-800 xl:text-left text-center">Mission</h2>
+    <h2 className="text-7xl font-[custom]] text-gray-800 xl:text-left text-center">Mission</h2>
     <div className="flex flex-col gap-5 text-2xl">
       <p className="mt-4">
         At ISIE, our mission is to provide high-quality industrial equipment that enhances 
@@ -92,7 +92,7 @@ function AboutUs() {
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
                     {/* Left Side: Vision Text */}
                     <div className="flex flex-col justify-center text-left md:text-left gap-4">
-  <h2 className="text-7xl font-[gurajada] text-white xl:text-left text-center">Vision</h2>
+  <h2 className="text-7xl font-[custom]] text-white xl:text-left text-center">Vision</h2>
   <div className="flex flex-col gap-4 text-2xl text-gray-300 leading-relaxed">
     <p className="mt-4">
       Our vision is to drive progress in the mining and industrial sectors by 
@@ -137,7 +137,7 @@ function AboutUs() {
                 {/* Content */}
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
                 <div className="flex flex-col justify-center text-left md:text-left gap-4">
-  <h2 className="text-7xl font-[gurajada] text-gray-800 xl:text-left text-center">
+  <h2 className="text-7xl font-[custom]] text-gray-800 xl:text-left text-center">
     Why Are We Here?
   </h2>
   <div className="flex flex-col gap-4 text-2xl">
@@ -162,7 +162,7 @@ function AboutUs() {
                 <div className="flex items-center w-full px-4 justify-center pt-24">
                     <div className="flex items-center w-full max-w-7xl">
                         <div className="flex-1 border-t border-gray-400"></div>
-                        <h2 className="mx-4 text-5xl lg:text-7xl  font-[gurajada] text-gray-800">Our Team</h2>
+                        <h2 className="mx-4 text-5xl lg:text-7xl  font-[custom]] text-gray-800">Our Team</h2>
                         <div className="flex-1 border-t border-gray-400"></div>
                     </div>
                 </div>

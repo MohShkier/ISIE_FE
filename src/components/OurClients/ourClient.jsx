@@ -39,7 +39,7 @@ console.log(data)
       <div className="flex items-center w-full px-4 justify-center pt-24">
         <div className="flex items-center w-full max-w-7xl">
           <div className="flex-1 border-t border-gray-400"></div>
-          <h2 className="mx-4 text-5xl lg:text-7xl font-[gurajada] text-gray-800">Our Clients</h2>
+          <h2 className="mx-4 text-5xl lg:text-7xl font-[custom]] text-gray-800">Our Clients</h2>
           <div className="flex-1 border-t border-gray-400"></div>
         </div>
       </div>
