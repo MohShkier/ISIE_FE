@@ -1,7 +1,6 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class', // Enables manual dark mode switching using the `dark` class
-  content: ['./src/**/*.{js,jsx,ts,tsx}'], // Your file paths
+  darkMode: 'class',
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -24,8 +23,8 @@ module.exports = {
       backgroundImage: {
         'hero-pattern': "url('/bg.jpg')",
       },
-      fontFamily: {
-        custom: ['MyCustomFont', 'sans-serif'],
+      fontFamily: { // ✅ Fix: 'fontFamily' instead of 'fontfamily'**
+        custom: ['gurajada-custom', 'sans-serif'], // ✅ Must match @font-face name
       },
     },
   },
