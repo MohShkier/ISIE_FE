@@ -1,10 +1,7 @@
-// tailwind.config.js
-import image from "./public/bg.jpg"
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class', // Enables manual dark mode switching using the `dark` class
-  content: [
-    './src/**/*.{js,jsx,ts,tsx}', // Your file paths
-  ],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'], // Your file paths
   theme: {
     extend: {
       colors: {
@@ -18,13 +15,16 @@ module.exports = {
         error: '#EF4444',
         success: '#10B981',
       },
+      lineClamp: {
+        2: '2',
+      },
       boxShadow: {
-                'custom': '2px 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06)',
-            },
-            backgroundImage: {
-        'hero-pattern': "url('/public/bg.jpg')",
+        custom: '2px 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06)',
+      },
+      backgroundImage: {
+        'hero-pattern': "url('/bg.jpg')",
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 };

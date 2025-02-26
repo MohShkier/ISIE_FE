@@ -42,7 +42,7 @@ function OurProductsPage() {
         </h2>
       </div>
 
-      <div className="mt-12 grid lg:grid-cols-3 md:grid-cols-3 grid-cols-2 xl:gap-16 gap-x-6 gap-y-16 w-full max-w-7xl px-12">
+      <div className="mt-12 grid lg:grid-cols-3 md:grid-cols-3 grid-cols-2 xl:gap-16 gap-x-6 gap-y-8 lg:gap-y-16 w-full max-w-7xl px-12">
         {loading ? (
           [...Array(6)].map((_, index) => <SkeletonCard key={index} />)
         ) : error ? (
@@ -55,8 +55,8 @@ function OurProductsPage() {
                 className="lg:rounded-[2.5rem] rounded-[1.5rem]  lg:shadow-[2px_2px_20px_2px_rgba(159,154,154,0.5)] shadow-[1px_1px_10px_1px_rgba(159,154,154,0.5)]"
                 alt={product.name}
               />
-              <p className="text-center font-bold pt-3 flex-grow">{product.name}</p>
-              <div className="w-full flex justify-center mt-6">
+              <p className="text-center lg:font-semibold pt-3 min-h-[50px] flex items-center justify-center text-sm md:text-lg flex-grow">{product.name}</p>
+              <div className="w-full lg:flex hidden justify-center mt-6">
                 <div className="bg-[#1D2736] rounded-full xl:rounded-[45px] w-[10rem] text-white text-center px-4 py-2 xl:px-8 xl:py-2">
                   More Details
                 </div>

@@ -1,3 +1,13 @@
+
+
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/public/fonts/Gurajada-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
   .signup-form-container {
     display: flex;
     justify-content: center;

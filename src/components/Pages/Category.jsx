@@ -67,12 +67,12 @@ function CategoryPage() {
               />
 
               {/* Category Name with Fixed Height */}
-              <p className="text-center font-bold pt-3 min-h-[50px] flex items-center justify-center">
+              <p className="text-center lg:font-semibold pt-3 min-h-[50px] flex items-center justify-center text-sm md:text-lg">
                 {category.name}
               </p>
 
               {/* Button Wrapper to Keep Alignment */}
-              <div className="w-full flex justify-center mt-auto pt-4">
+              <div className="w-full lg:flex hidden justify-center mt-auto pt-4 ">
   <div className="bg-[#1D2736] rounded-full text-white text-center px-4 sm:px-6 py-2 text-xs sm:text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-300 hover:bg-[#253345] w-fit">
     More Details
   </div>

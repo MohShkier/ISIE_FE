@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import { FaWhatsapp, FaPhone } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { FaPhoneAlt } from "react-icons/fa";
-
+import "./styles.css"
 function ProductImgSwiper({ product }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
@@ -54,9 +54,10 @@ function ProductImgSwiper({ product }) {
               <SwiperSlide key={index} onClick={() => handleImageClick(index)}>
                 <img
                   src={image}
-                  className="cursor-pointer lg:rounded-[2.5rem] rounded-[1.5rem]  shadow-md transition transform hover:scale-105"
+                  className="cursor-pointer lg:rounded-[1rem] rounded-[1rem] shadow-md transition transform hover:scale-105 object-cover w-full h-full"
                   alt={`Thumbnail ${index + 1}`}
                 />
+
               </SwiperSlide>
             ))}
           </Swiper>

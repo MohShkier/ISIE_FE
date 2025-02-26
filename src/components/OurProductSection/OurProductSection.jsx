@@ -46,7 +46,8 @@ const ProductSection = () => {
           viewport={{ once: true }}
         >
           <div className="flex-grow border-t border-gray-400"></div>
-          <h2 className="mx-4 text-[#1D2736] text-2xl xl:text-5xl">Our Products</h2>
+          <h2 className="mx-4 text-[#1D2736] text-5xl xl:text-7xl
+font-[gurajada]">Our Products</h2>
           <div className="flex-grow border-t border-gray-400"></div>
         </motion.div>
 
@@ -58,27 +59,27 @@ const ProductSection = () => {
         >
           {loading
             ? Array.from({ length: 4 }).map((_, index) => (
-                <motion.div key={index} className="animate-pulse">
-                  <div className="rounded-[1.5rem] bg-gray-300 h-40 w-full"></div>
-                  <div className="h-6 bg-gray-300 rounded w-3/4 mx-auto mt-3"></div>
+              <motion.div key={index} className="animate-pulse">
+                <div className="rounded-[1.5rem] bg-gray-300 h-40 w-full"></div>
+                <div className="h-6 bg-gray-300 rounded w-3/4 mx-auto mt-3"></div>
+              </motion.div>
+            ))
+            : data?.featuredProducts?.length > 0 ? (
+              data.featuredProducts.map((product, index) => (
+                <motion.div key={product._id} variants={fadeInUpVariants} custom={index} initial="hidden" whileInView="visible" viewport={{ once: false }}>
+                  <Link to={`/product-details/${product._id}`}>
+                    <img
+                      src={product.thumbnail}
+                      alt={product.name}
+                      className="lg:rounded-[2.5rem] rounded-[1.5rem] lg:shadow-[2px_2px_20px_2px_rgba(159,154,154,0.5)] shadow-[1px_1px_10px_1px_rgba(159,154,154,0.5)] w-full"
+                    />
+                    <p className="text-center xl:font-semibold pt-3 text-xs md:text-lg">{product.name}</p>
+                  </Link>
                 </motion.div>
               ))
-            : data?.featuredProducts?.length > 0 ? (
-                data.featuredProducts.map((product, index) => (
-                  <motion.div key={product._id} variants={fadeInUpVariants} custom={index} initial="hidden" whileInView="visible" viewport={{ once: false }}>
-                    <Link to={`/product-details/${product._id}`}>
-                      <img
-                        src={product.thumbnail}
-                        alt={product.name}
-                        className="lg:rounded-[2.5rem] rounded-[1.5rem] lg:shadow-[2px_2px_20px_2px_rgba(159,154,154,0.5)] shadow-[1px_1px_10px_1px_rgba(159,154,154,0.5)] w-full"
-                      />
-                      <p className="text-center font-bold pt-3">{product.name}</p>
-                    </Link>
-                  </motion.div>
-                ))
-              ) : (
-                <p className="text-center text-gray-500 col-span-full">No products available</p>
-              )}
+            ) : (
+              <p className="text-center text-gray-500 col-span-full">No products available</p>
+            )}
         </motion.div>
       </div>
 
@@ -91,7 +92,7 @@ const ProductSection = () => {
           viewport={{ once: true }}
         >
           <div className="flex-grow border-t border-gray-400"></div>
-          <h2 className="mx-4 text-2xl xl:text-5xl text-gray-800">Categories</h2>
+          <h2 className="mx-4 text-5xl xl:text-7xl  text-gray-800 font-[gurajada]">Categories</h2>
           <div className="flex-grow border-t border-gray-400"></div>
         </motion.div>
 
@@ -125,11 +126,12 @@ const ProductSection = () => {
                       alt={category.name}
                       className="lg:rounded-[2.5rem] rounded-[1.5rem] lg:shadow-[2px_2px_20px_2px_rgba(159,154,154,0.5)] shadow-[1px_1px_10px_1px_rgba(159,154,154,0.5)] w-full"
                     />
-                    <p className="text-center font-bold pt-3 min-h-[50px] flex items-center justify-center">
+                    
+                    <p className="text-center lg:font-semibold pt-3 min-h-[50px] flex items-center justify-center text-sm md:text-lg">
                       {category.name}
                     </p>
                     <Link to={`category-details/${category._id}`}>
-                    <div className="w-full flex justify-center mt-auto pt-8">
+                    <div className="w-full  justify-center mt-auto pt-8 lg:flex hidden">
                       <div className="bg-[#1D2736] rounded-full xl:rounded-[45px] w-[10rem] text-white text-center px-4 py-2 xl:px-8 xl:py-2">
                         More Details
                       </div>
