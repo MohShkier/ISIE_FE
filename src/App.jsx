@@ -13,9 +13,12 @@ import ProductImgSwiper from "./components/SignleProduct/ProductsImgSwiper";
 import ProductsDetails from "./components/SignleProduct/ProductsDetails";
 import ContactUsForm from "./components/Pages/ContactUsPage";
 import AboutUs from "./components/AboutUs/AboutUs";
+import ScrollToTop from "./components/ScrollToTop";
+import CategoryDetails from "./components/Pages/CategoryDetails";
 function App() {
   return (
     <Router>
+    <ScrollToTop/>
     <div className="!bg-[#EEE]">
       <NavBar />
       <BottomBar />
@@ -24,6 +27,7 @@ function App() {
         <Route path="/categories" element={<CategoryPage />} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/product-details/:id" element={<ProductsDetails />} />
+        <Route path="/category-details/:id" element={<CategoryDetails />} />
         <Route path="/contactus" element={<ContactUsForm />} />
         <Route path="/about" element={<AboutUs />} />
 

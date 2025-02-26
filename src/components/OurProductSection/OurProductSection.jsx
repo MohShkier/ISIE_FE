@@ -20,10 +20,9 @@ const ProductSection = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/home", {
+        const response = await axios.get("https://isie-management-system.onrender.com/api/home", {
           withCredentials: true,
         });
-        console.log("Fetched Data:", response.data);
         setData(response.data);
       } catch (err) {
         console.error("Fetch error:", err);
@@ -71,7 +70,7 @@ const ProductSection = () => {
                       <img
                         src={product.thumbnail}
                         alt={product.name}
-                        className="lg:rounded-[2.5rem] rounded-[1.5rem] lg:shadow-[2px_2px_40px_2px_rgba(0,0,0,0.25)] shadow-[0.5px_0.5px_40px_0.5px_rgba(0,0,0,0.25)] w-full"
+                        className="lg:rounded-[2.5rem] rounded-[1.5rem] lg:shadow-[2px_2px_20px_2px_rgba(159,154,154,0.5)] shadow-[1px_1px_10px_1px_rgba(159,154,154,0.5)] w-full"
                       />
                       <p className="text-center font-bold pt-3">{product.name}</p>
                     </Link>
@@ -124,16 +123,18 @@ const ProductSection = () => {
                     <img
                       src={category.thumbnail}
                       alt={category.name}
-                      className="lg:rounded-[2.5rem] rounded-[1.5rem] lg:shadow-[2px_2px_40px_2px_rgba(0,0,0,0.25)] shadow-[0.5px_0.5px_20px_0.5px_rgba(0,0,0,0.25)] w-full"
+                      className="lg:rounded-[2.5rem] rounded-[1.5rem] lg:shadow-[2px_2px_20px_2px_rgba(159,154,154,0.5)] shadow-[1px_1px_10px_1px_rgba(159,154,154,0.5)] w-full"
                     />
                     <p className="text-center font-bold pt-3 min-h-[50px] flex items-center justify-center">
                       {category.name}
                     </p>
+                    <Link to={`category-details/${category._id}`}>
                     <div className="w-full flex justify-center mt-auto pt-8">
                       <div className="bg-[#1D2736] rounded-full xl:rounded-[45px] w-[10rem] text-white text-center px-4 py-2 xl:px-8 xl:py-2">
                         More Details
                       </div>
                     </div>
+                    </Link>
                   </motion.div>
                 ))
               ) : (

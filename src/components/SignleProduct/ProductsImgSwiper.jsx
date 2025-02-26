@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { FaWhatsapp, FaPhone } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { FaPhoneAlt } from "react-icons/fa";
 
 function ProductImgSwiper({ product }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -16,12 +17,12 @@ function ProductImgSwiper({ product }) {
 
   return (
     <motion.div
-      className="container mx-auto px-4 pb-14 pt-44 flex justify-center min-h-screen"
+      className="container mx-auto px-4 pb-6 lg:pt-44  pt-28 flex justify-center min-h-screen"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="flex flex-col lg:flex-row items-center gap-10">
+      <div className="flex flex-col lg:flex-row pt-12 gap-10">
         {/* Image & Swiper Section */}
         <div className="w-full lg:w-1/2 flex flex-col items-center">
           <div className="relative mb-6 flex justify-center">
@@ -53,7 +54,7 @@ function ProductImgSwiper({ product }) {
               <SwiperSlide key={index} onClick={() => handleImageClick(index)}>
                 <img
                   src={image}
-                  className="cursor-pointer rounded-lg shadow-md transition transform hover:scale-105"
+                  className="cursor-pointer lg:rounded-[2.5rem] rounded-[1.5rem]  shadow-md transition transform hover:scale-105"
                   alt={`Thumbnail ${index + 1}`}
                 />
               </SwiperSlide>
@@ -73,7 +74,7 @@ function ProductImgSwiper({ product }) {
 
         {/* Product Details */}
         <motion.div
-          className="w-full lg:w-1/2 p-6 text-left"
+          className="w-full lg:w-1/2 p-6  text-left"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -85,7 +86,7 @@ function ProductImgSwiper({ product }) {
             {product.description}
           </p>
 
-          <div className="flex space-x-4 justify-start pt-10">
+          <div className="flex space-x-4 lg:justify-end justify-start pt-12 xl:pt-20">
             {/* WhatsApp Button */}
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -102,7 +103,7 @@ function ProductImgSwiper({ product }) {
               whileTap={{ scale: 0.95 }}
               className="flex items-center space-x-2 border border-gray-500 text-gray-800 py-2 px-4 rounded-full shadow-md hover:bg-gray-100 transition"
             >
-              <FaPhone className="text-gray-600 text-lg" />
+              <FaPhoneAlt className="text-gray-600 text-lg" />
               <span>Call</span>
             </motion.button>
           </div>

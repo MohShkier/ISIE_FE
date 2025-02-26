@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const SkeletonCard = () => (
   <div className="animate-pulse flex flex-col items-center">
@@ -10,20 +9,31 @@ const SkeletonCard = () => (
   </div>
 );
 
-function OurProductsPage() {
-  const [data, setData] = useState(null);
+function CategoryDetails() {
+  const [products, setProducts] = useState([]);
+  const [categoryName, setCategoryName] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1); // Store total pages
+  const { id } = useParams();
 
   useEffect(() => {
-    const fetchData = async () => {
+    if (!id) return;
+
+    // Reset page when category changes
+    setCurrentPage(1);
+    setProducts([]);
+
+    const fetchCategoryDetails = async () => {
       try {
-        const response = await axios.get(
-              `https://isie-management-system.onrender.com/api/products?page=${currentPage}`,
-          { withCredentials: true }
-        );
-        setData(response.data);
+        setLoading(true);
+
+        // Fetch category details
+        const categoryResponse = await fetch(`https://isie-management-system.onrender.com/api/categories/${id}/products`);
+        if (!categoryResponse.ok) throw new Error("Failed to fetch category details");
+        const categoryData = await categoryResponse.json();
+        setCategoryName(categoryData.category.name);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -31,14 +41,37 @@ function OurProductsPage() {
       }
     };
 
-    fetchData();
-  }, [currentPage]);
+    fetchCategoryDetails();
+  }, [id]);
+
+  useEffect(() => {
+    if (!id) return;
+
+    const fetchProducts = async () => {
+      try {
+        setLoading(true);
+        
+        const productsResponse = await fetch(`https://isie-management-system.onrender.com/api/categories/${id}/products?page=${currentPage}`);
+        if (!productsResponse.ok) throw new Error("Failed to fetch products");
+        const productsData = await productsResponse.json();
+
+        setProducts(productsData.products || []);
+        setTotalPages(productsData.totalPages || 1); // Store total pages
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, [id, currentPage]);
 
   return (
     <div className="w-full flex flex-col items-center pt-36 lg:pt-44 lg:mb-10 mb-20 min-h-screen">
       <div className="flex items-center w-full max-w-7xl px-4">
         <h2 className="mx-4 text-5xl text-gray-800 font-[gurajada] ml-10">
-          Our Products
+          {categoryName ? `Category: ${categoryName}` : "Our Products"}
         </h2>
       </div>
 
@@ -48,11 +81,11 @@ function OurProductsPage() {
         ) : error ? (
           <p className="text-center text-red-500 mt-10">Error: {error}</p>
         ) : (
-          data?.products?.map((product) => (
+          products.map((product) => (
             <Link key={product._id} to={`/product-details/${product._id}`} className="flex flex-col justify-between items-center h-full">
               <img
                 src={product.thumbnail}
-                className="lg:rounded-[2.5rem] rounded-[1.5rem]  lg:shadow-[2px_2px_20px_2px_rgba(159,154,154,0.5)] shadow-[1px_1px_10px_1px_rgba(159,154,154,0.5)]"
+                className="lg:rounded-[2.5rem] rounded-[1.5rem] lg:shadow-[2px_2px_20px_2px_rgba(159,154,154,0.5)] shadow-[1px_1px_10px_1px_rgba(159,154,154,0.5)]"
                 alt={product.name}
               />
               <p className="text-center font-bold pt-3 flex-grow">{product.name}</p>
@@ -66,6 +99,7 @@ function OurProductsPage() {
         )}
       </div>
 
+      {/* Pagination */}
       <div className="flex justify-center mt-20 space-x-4">
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
@@ -74,10 +108,10 @@ function OurProductsPage() {
         >
           Previous
         </button>
-        <span className="text-lg font-bold">{`Page ${currentPage} of ${data?.totalPages || 1}`}</span>
+        <span className="text-lg font-bold">{`Page ${currentPage} of ${totalPages}`}</span>
         <button
-          onClick={() => setCurrentPage((prev) => (prev < data?.totalPages ? prev + 1 : prev))}
-          disabled={currentPage >= data?.totalPages}
+          onClick={() => currentPage < totalPages && setCurrentPage((prev) => prev + 1)}
+          disabled={currentPage >= totalPages}
           className="bg-gray-700 text-white px-4 py-2 rounded-lg disabled:opacity-50"
         >
           Next
@@ -87,4 +121,4 @@ function OurProductsPage() {
   );
 }
 
-export default OurProductsPage;
+export default CategoryDetails;
