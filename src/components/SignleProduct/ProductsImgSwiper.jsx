@@ -17,11 +17,12 @@ function ProductImgSwiper({ product }) {
 
   return (
     <motion.div
-      className="container mx-auto px-4 pb-6 lg:pt-44  pt-28 flex justify-center min-h-screen"
+      className="container mx-auto px-4 pb-6 lg:pt-44  pt-28 flex justify-center min-h-screen overflow-hidden"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
+    
       <div className="flex flex-col lg:flex-row pt-12 gap-10">
         {/* Image & Swiper Section */}
         <div className="w-full lg:w-1/2 flex flex-col items-center">
@@ -36,7 +37,7 @@ function ProductImgSwiper({ product }) {
 
           {/* Swiper Carousel */}
           <Swiper
-            className="xl:max-w-[20rem] max-w-[16rem] p-4"
+            className="xl:max-w-[20rem] max-w-[16rem] p-4 overflow-hidden"
             modules={[Navigation, Pagination, Autoplay]}
             autoplay={{ delay: 2000, disableOnInteraction: true }}
             spaceBetween={20}
@@ -83,7 +84,7 @@ function ProductImgSwiper({ product }) {
           <h2 className="text-3xl font-bold text-gray-800 mb-6">
             {product.name}
           </h2>
-          <p className="text-gray-700 text-lg leading-relaxed">
+          <p className="text-gray-700 text-lg leading-relaxed ">
             {product.description}
           </p>
 
