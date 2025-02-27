@@ -3,6 +3,9 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        customGurajada: ['gurajadacustom', 'sans-serif'], // ✅ Must match @font-face name
+      },
       colors: {
         darkPrimary: '#121212',
         darkSecondary: '#1F2937',
@@ -23,9 +26,7 @@ module.exports = {
       backgroundImage: {
         'hero-pattern': "url('/bg.jpg')",
       },
-      fontFamily: { // ✅ Fix: 'fontFamily' instead of 'fontfamily'**
-        custom: ['gurajada-custom', 'sans-serif'], // ✅ Must match @font-face name
-      },
+      
     },
   },
   plugins: [require('@tailwindcss/line-clamp')],

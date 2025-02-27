@@ -1,11 +1,12 @@
 
 
 @font-face {
-  font-family: 'gurajada-custom';
+  font-family: 'gurajadacustom';
   src: url('/public/fonts/gurajada-regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+
 
 
   .signup-form-container {

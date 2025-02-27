@@ -41,7 +41,7 @@ function CategoryPage() {
   return (
     <div className="w-full flex flex-col items-center mt-20 lg:mb-10 mb-20 min-h-screen lg:pt-24 pt-16">
       <div className="flex items-center w-full max-w-7xl px-4">
-        <h2 className="mx-4 text-5xl text-gray-800 font-[custom]] ml-10">Categories</h2>
+        <h2 className="mx-4 text-5xl text-gray-800 font-customGurajada ml-10">Categories</h2>
       </div>
 
       <div className="mt-12 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 gap-8 w-full max-w-7xl px-12">

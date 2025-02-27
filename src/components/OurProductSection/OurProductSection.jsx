@@ -47,7 +47,7 @@ const ProductSection = () => {
         >
           <div className="flex-grow border-t border-gray-400"></div>
           <h2 className="mx-4 text-[#1D2736] text-5xl xl:text-7xl
-font-[custom]]">Our Products</h2>
+font-customGurajada">Our Products</h2>
           <div className="flex-grow border-t border-gray-400"></div>
         </motion.div>
 
@@ -92,7 +92,7 @@ font-[custom]]">Our Products</h2>
           viewport={{ once: true }}
         >
           <div className="flex-grow border-t border-gray-400"></div>
-          <h2 className="mx-4 text-5xl xl:text-7xl  text-gray-800 font-[custom]]">Categories</h2>
+          <h2 className="mx-4 text-5xl xl:text-7xl  text-gray-800 font-customGurajada">Categories</h2>
           <div className="flex-grow border-t border-gray-400"></div>
         </motion.div>
 

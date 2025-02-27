@@ -33,7 +33,7 @@ function SimilarProducts({ categoryId }) {
         <div className="w-full flex flex-col items-center   !mb-20">
             <div className="flex items-center w-full max-w-7xl px-4">
                 <div className="flex-grow border-t border-gray-400"></div>
-                <h2 className="mx-4 text-5xl text-gray-800 font-[custom]]">Similar Products</h2>
+                <h2 className="mx-4 text-5xl text-gray-800 font-customGurajada">Similar Products</h2>
                 <div className="flex-grow border-t border-gray-400"></div>
             </div>
 

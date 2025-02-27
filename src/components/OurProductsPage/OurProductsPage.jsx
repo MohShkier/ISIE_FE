@@ -37,7 +37,7 @@ function OurProductsPage() {
   return (
     <div className="w-full flex flex-col items-center pt-36 lg:pt-44 lg:mb-10 mb-20 min-h-screen">
       <div className="flex items-center w-full max-w-7xl px-4">
-        <h2 className="mx-4 text-5xl text-gray-800 font-[custom]] ml-10">
+        <h2 className="mx-4 text-5xl text-gray-800 font-customGurajada ml-10">
           Our Products
         </h2>
       </div>
