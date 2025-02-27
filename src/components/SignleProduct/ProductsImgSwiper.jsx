@@ -89,7 +89,7 @@ function ProductImgSwiper({ product }) {
           </p>
 
           <div className="flex space-x-4 lg:justify-end justify-start pt-12 xl:pt-20">
-            {/* WhatsApp Button */}
+          <a href="https://wa.me/+962798337984"> {/* WhatsApp Button */}
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -97,9 +97,11 @@ function ProductImgSwiper({ product }) {
             >
               <FaWhatsapp className="text-green-400 text-lg" />
               <span>Message</span>
-            </motion.button>
+
+            </motion.button></a>
 
             {/* Call Button */}
+            <a href="tel:+96264161314">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -108,6 +110,7 @@ function ProductImgSwiper({ product }) {
               <FaPhoneAlt className="text-gray-600 text-lg" />
               <span>Call</span>
             </motion.button>
+            </a>
           </div>
         </motion.div>
       </div>

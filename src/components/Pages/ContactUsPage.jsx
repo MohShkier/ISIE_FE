@@ -35,10 +35,10 @@ function ContactUsForm() {
               </h2>
               <p className="text-gray-300">Our friendly team is here to help.</p>
               <a
-                href="mailto:support@example.com"
+                href="mailto:info@ishraqitshams.com"
                 className="mt-2 inline-block bg-blue-600 px-5 py-2 rounded-lg text-white hover:bg-blue-500 transition"
               >
-                <i className="fas fa-envelope mr-2"></i> support@example.com
+                <i className="fas fa-envelope mr-2"></i> info@ishraqitshams.com
               </a>
             </section>
 
@@ -51,10 +51,10 @@ function ContactUsForm() {
                 <strong>Sun - Thu</strong> from <strong>8 AM to 5 PM</strong>
               </p>
               <a
-                href="tel:+1234567890"
+                href="tel:+96264161314"
                 className="mt-2 inline-block bg-green-600 px-5 py-2 rounded-lg text-white hover:bg-green-500 transition"
               >
-                <i className="fas fa-phone mr-2"></i> +1 (234) 567-890
+                <i className="fas fa-phone mr-2"></i> +(962) 064161314
               </a>
             </section>
 

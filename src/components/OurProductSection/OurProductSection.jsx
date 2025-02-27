@@ -121,12 +121,14 @@ font-customGurajada">Our Products</h2>
                     viewport={{ once: false }}
                     className="flex flex-col items-center"
                   >
-                    <img
-                      src={category.thumbnail}
-                      alt={category.name}
-                      className="lg:rounded-[2.5rem] rounded-[1.5rem] lg:shadow-[2px_2px_20px_2px_rgba(159,154,154,0.5)] shadow-[1px_1px_10px_1px_rgba(159,154,154,0.5)] w-full"
-                    />
-                    
+                    <Link to={`category-details/${category._id}`} className="block w-full">
+  <img
+    src={category.thumbnail}
+    alt={category.name}
+    className="lg:rounded-[2.5rem] rounded-[1.5rem] lg:shadow-[2px_2px_20px_2px_rgba(159,154,154,0.5)] shadow-[1px_1px_10px_1px_rgba(159,154,154,0.5)] w-full"
+  />
+</Link>
+
                     <p className="text-center lg:font-semibold pt-3 min-h-[50px] flex items-center justify-center text-sm md:text-lg">
                       {category.name}
                     </p>

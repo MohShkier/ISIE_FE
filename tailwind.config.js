@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        customGurajada: ['gurajadacustom', 'sans-serif'], // ✅ Must match @font-face name
+        customGurajada: ['gurajadacustom', 'sans-serif'],
       },
       colors: {
         darkPrimary: '#121212',

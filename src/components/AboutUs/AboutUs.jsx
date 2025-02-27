@@ -174,7 +174,7 @@ function AboutUs() {
                         <p className="text-center">CEO & HR</p>
                         <div className="flex items-center space-x-2 rtl:space-x-reverse">
                             <FaPhoneAlt className="text-[#1D2736]" />
-                            <a href="tel:064161314">064161314</a>
+                            <a href="tel:+96264161314">064161314</a>
                         </div>
                     </div>
 
@@ -184,7 +184,7 @@ function AboutUs() {
                         <p className="text-center">Sales</p>
                         <div className="flex items-center space-x-2 rtl:space-x-reverse">
                             <FaPhoneAlt className="text-[#1D2736]" />
-                            <a href="tel:064161314">064161314</a>
+                            <a href="tel:+96264161314">064161314</a>
                         </div>
 
                     </div>
