@@ -73,9 +73,13 @@ function SimilarProducts({ categoryId }) {
             {products.products.length > 4 && (
               <div className="w-full max-w-7xl px-12 flex justify-center mt-10">
                 <div className="border-[#1D2736] border-[1px] cursor-pointer rounded-[45px] w-[10rem] transition-all duration-300 text-black hover:text-white hover:bg-[#1D2736] text-center px-8 text-[16px] py-2 hover:scale-110">
-                 <Link to={`/category-details/${products.category._id}`}>
-                  <p className="text-center">Show More</p>
-                 </Link>
+                <Link
+  to={`/category-details/${products.category._id}`}
+  onClick={() => setTimeout(() => window.location.reload(), 100)}
+>
+  <p className="text-center">Show More</p>
+</Link>
+
                 </div>
               </div>
             )}

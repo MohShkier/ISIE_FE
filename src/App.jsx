@@ -15,6 +15,7 @@ import ContactUsForm from "./components/Pages/ContactUsPage";
 import AboutUs from "./components/AboutUs/AboutUs";
 import ScrollToTop from "./components/ScrollToTop";
 import CategoryDetails from "./components/Pages/CategoryDetails";
+import ProductDetailsWrapper from "./components/SignleProduct/ProductDetailsWrapper";
 function App() {
   return (
     <Router>
@@ -26,7 +27,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/categories" element={<CategoryPage />} />
         <Route path="/products" element={<ProductsPage />} />
-        <Route path="/product-details/:id" element={<ProductsDetails />} />
+        <Route path="/product-details/:id" element={<ProductDetailsWrapper />} />
         <Route path="/category-details/:id" element={<CategoryDetails />} />
         <Route path="/contactus" element={<ContactUsForm />} />
         <Route path="/about" element={<AboutUs />} />
