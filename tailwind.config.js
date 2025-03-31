@@ -5,6 +5,11 @@ module.exports = {
     extend: {
       fontFamily: {
         customGurajada: ['gurajadacustom', 'sans-serif'],
+        poppins: ['poppinscustom', 'sans-serif'],
+        tajwal: ['tajwalcustom', 'sans-serif'], 
+        noto:['notocustom','sans-serif']
+
+
       },
       colors: {
         darkPrimary: '#121212',

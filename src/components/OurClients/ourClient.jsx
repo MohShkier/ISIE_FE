@@ -7,8 +7,10 @@ import "swiper/css/pagination";
 import axios from "axios";
 import "./styles.css";
 import ClientItem from "./clientItem";
+import { useTranslation } from "react-i18next";
 
 const OurClient = () => {
+  const { t } = useTranslation();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -39,7 +41,7 @@ console.log(data)
       <div className="flex items-center w-full px-4 justify-center pt-24">
         <div className="flex items-center w-full max-w-7xl">
           <div className="flex-1 border-t border-gray-400"></div>
-          <h2 className="mx-4 text-5xl lg:text-7xl font-customGurajada text-gray-800">Our Clients</h2>
+          <h2 className="mx-4 text-5xl lg:text-7xl  text-gray-800">{t("OurClient")}</h2>
           <div className="flex-1 border-t border-gray-400"></div>
         </div>
       </div>
@@ -98,13 +100,13 @@ console.log(data)
           <div className="flex justify-center flex-row gap-12 mt-8">
             <button
               ref={prevRef}
-              className="custom-prev bg-gray-800 text-white p-2 px-4 rounded-full shadow-lg hover:bg-gray-700 transition"
+              className="custom-prev bg-gray-800 text-white p-2 px-4 rounded-full  hover:bg-gray-700 transition"
             >
               ❮
             </button>
             <button
               ref={nextRef}
-              className="custom-next bg-gray-800 text-white p-2 px-4 rounded-full shadow-lg hover:bg-gray-700 transition"
+              className="custom-next bg-gray-800 text-white p-2 px-4 rounded-full  hover:bg-gray-700 transition"
             >
               ❯
             </button>

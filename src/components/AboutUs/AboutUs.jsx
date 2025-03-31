@@ -1,7 +1,11 @@
 import React from "react";
 import OurClient from "../OurClients/ourClient";
 import { FaPhoneAlt } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+import { useLanguage } from '../../context/LanguageContext';
 function AboutUs() {
+    const { t } = useTranslation();
+    const { language } = useLanguage();
     return (
         <>
             <div className="relative w-full ">
@@ -16,13 +20,14 @@ function AboutUs() {
                     <div className="absolute inset-0 bg-[#1D2736]/80"></div>
 
                     {/* Text Content (Above Overlay) */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 gap-10">
-                        <h1 className="text-white text-7xl font-customGurajada">About Us</h1>
-                        <p className="text-white text-lg md:text-xl mt-2 max-w-[90%] md:max-w-[60%]">
-                            ISIE is a company specializing in industrial equipment.
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 gap-10 ">
+                        <h1 className="text-white text-7xl ">{t("About Us")}</h1>
+                        <p className="text-white text-lg md:text-xl mt-2 max-w-[90%] md:max-w-[60%] font-sans">
+                            {t("aboutUsHero1")}
                             <br />
+                            
 
-                            Our company has been operating since 2014.
+                           {t("aboutUsHero2")}
                         </p>
                     </div>
                 </div>
@@ -45,25 +50,27 @@ function AboutUs() {
 
                 {/* Content */}
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
-  <div className="flex flex-col justify-center text-left md:text-left gap-4">
-    <h2 className="text-7xl font-customGurajada text-gray-800 xl:text-left text-center">Mission</h2>
-    <div className="flex flex-col gap-5 text-2xl">
-      <p className="mt-4">
-        At ISIE, our mission is to provide high-quality industrial equipment that enhances 
-        efficiency, safety, and productivity in the mining and industrial sectors.
-      </p>
-      <p>
-        We are committed to delivering innovative solutions tailored to industry needs, ensuring 
-        reliability, durability, and optimal performance in every product we offer.
-      </p>
-    </div>
-  </div>
+                    <div className="flex flex-col justify-center text-left md:text-left gap-4">
+                        <h2 className={`text-7xl text-gray-800 xl:text-left text-center ${language === "ar" ? "!text-right" : ""}`}>
+                            {t("Mission")}
+                        </h2>
+                        <div className="flex flex-col gap-5 text-2xl">
+                            <p className="mt-4">
+                                At ISIE, our mission is to provide high-quality industrial equipment that enhances
+                                efficiency, safety, and productivity in the mining and industrial sectors.
+                            </p>
+                            <p>
+                                We are committed to delivering innovative solutions tailored to industry needs, ensuring
+                                reliability, durability, and optimal performance in every product we offer.
+                            </p>
+                        </div>
+                    </div>
 
-  {/* Illustration */}
-  <div className="flex justify-center">
-    <img src="arrows.png" alt="Mission Illustration" className="w-4/5 max-w-md" />
-  </div>
-</div>
+                    {/* Illustration */}
+                    <div className="flex justify-center">
+                        <img src="arrows.png" alt="Mission Illustration" className="w-4/5 max-w-md" />
+                    </div>
+                </div>
 
             </div>
 
@@ -92,19 +99,20 @@ function AboutUs() {
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
                     {/* Left Side: Vision Text */}
                     <div className="flex flex-col justify-center text-left md:text-left gap-4">
-  <h2 className="text-7xl font-customGurajada text-white xl:text-left text-center">Vision</h2>
-  <div className="flex flex-col gap-4 text-2xl text-gray-300 leading-relaxed">
-    <p className="mt-4">
-      Our vision is to drive progress in the mining and industrial sectors by 
-      delivering cutting-edge solutions that enhance operational efficiency and sustainability.
-    </p>
-    <p>
-      We aim to expand our global reach, build long-term partnerships, and continuously evolve 
-      to meet the ever-changing demands of the industry while maintaining the highest standards 
-      of quality and service.
-    </p>
-  </div>
-</div>
+                    <h2 className={`text-7xl text-white xl:text-left text-center ${language === "ar" ? "!text-right" : ""}`}>
+                    {t("Vision")}</h2>
+                        <div className="flex flex-col gap-4 text-2xl text-gray-300 leading-relaxed">
+                            <p className="mt-4">
+                                Our vision is to drive progress in the mining and industrial sectors by
+                                delivering cutting-edge solutions that enhance operational efficiency and sustainability.
+                            </p>
+                            <p>
+                                We aim to expand our global reach, build long-term partnerships, and continuously evolve
+                                to meet the ever-changing demands of the industry while maintaining the highest standards
+                                of quality and service.
+                            </p>
+                        </div>
+                    </div>
 
 
                     {/* Right Side: Illustration */}
@@ -136,17 +144,17 @@ function AboutUs() {
 
                 {/* Content */}
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
-                <div className="flex flex-col justify-center text-left md:text-left gap-4">
-  <h2 className="text-7xl font-customGurajada text-gray-800 xl:text-left text-center">
-    Why Are We Here?
-  </h2>
-  <div className="flex flex-col gap-4 text-2xl">
-    <p className="mt-4">
-      At ISIE, our mission is to provide high-quality industrial equipment that 
-      enhances efficiency, safety, and productivity in the mining and industrial sectors.
-    </p>
-  </div>
-</div>
+                    <div className="flex flex-col justify-center text-left md:text-left gap-4">
+                    <h2 className={`text-7xl text-gray-800  xl:text-left text-center ${language === "ar" ? "!text-right" : ""}`}>
+                            {t("WhyAreWe")}
+                        </h2>
+                        <div className="flex flex-col gap-4 text-2xl">
+                            <p className="mt-4">
+                                At ISIE, our mission is to provide high-quality industrial equipment that
+                                enhances efficiency, safety, and productivity in the mining and industrial sectors.
+                            </p>
+                        </div>
+                    </div>
 
 
                     {/* Illustration */}
@@ -162,7 +170,7 @@ function AboutUs() {
                 <div className="flex items-center w-full px-4 justify-center pt-24">
                     <div className="flex items-center w-full max-w-7xl">
                         <div className="flex-1 border-t border-gray-400"></div>
-                        <h2 className="mx-4 text-5xl lg:text-7xl  font-customGurajada text-gray-800">Our Team</h2>
+                        <h2 className="mx-4 text-5xl lg:text-7xl   text-gray-800">{t("OurTeam")}</h2>
                         <div className="flex-1 border-t border-gray-400"></div>
                     </div>
                 </div>

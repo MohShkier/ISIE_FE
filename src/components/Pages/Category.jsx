@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useLanguage } from '../../context/LanguageContext';
+import { useTranslation } from "react-i18next";
+
 const slideInVariants = {
   hidden: { opacity: 0, x: 50 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
@@ -20,7 +23,8 @@ function CategoryPage() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  const { t } = useTranslation();
+  const { language, changeLanguage } = useLanguage();
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -40,11 +44,14 @@ function CategoryPage() {
 
   return (
     <div className="w-full flex flex-col items-center mt-20 lg:mb-10 mb-20 min-h-screen lg:pt-24 pt-16">
-      <div className="flex items-center w-full max-w-7xl px-4">
-        <h2 className="mx-4 text-5xl text-gray-800 font-customGurajada ml-10">Categories</h2>
+
+      <div className="flex items-center w-full max-w-[1550px] mx-auto px-3 sm:px-12">
+        <h2 className="lg:text-5xl text-3xl text-gray-800">
+          {t("categories")}
+        </h2>
       </div>
 
-      <div className="mt-12 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 gap-8 w-full max-w-7xl px-12">
+      <div className="mt-16 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 gap-y-6 md:gap-8 w-full max-w-[1550px] sm:px-12 px-3">
         {loading ? (
           // Show skeleton loader while loading
           [...Array(8)].map((_, index) => <SkeletonCard key={index} />)
@@ -53,32 +60,30 @@ function CategoryPage() {
         ) : data?.categories && Array.isArray(data.categories) && data.categories.length > 0 ? (
           data.categories.map((category, index) => (
             <motion.div
-              key={index}
+              key={category._id}
               variants={slideInVariants}
+              custom={index}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
-              className="flex flex-col items-center"
+              viewport={{ once: false }}
+              className="bg-[#1D27361A] rounded-lg  p-2 sm:p-6 flex flex-col items-center"
             >
-
-                    <Link to={`/category-details/${category._id}`} className="block w-full">
-
+              <Link to={`/category-details/${category._id}`} className="block w-full">
                 <img
                   src={category.thumbnail}
                   alt={category.name}
-                  className="lg:rounded-[2.5rem] rounded-[1.5rem] lg:shadow-[2px_2px_20px_2px_rgba(159,154,154,0.5)] shadow-[1px_1px_10px_1px_rgba(159,154,154,0.5)] w-full"
+                  className="w-full rounded-lg object-contain mb-4"
                 />
-                </Link>
-              {/* Category Name with Fixed Height */}
-              <p className="text-center lg:font-semibold pt-3 min-h-[50px] flex items-center justify-center text-sm md:text-lg">
-                {category.name}
-              </p>
+              </Link>
 
-              {/* Button Wrapper to Keep Alignment */}
-              <Link to={`/category-details/${category._id}`}>
-                <div className="w-full lg:flex hidden justify-center mt-auto pt-4 ">
-                  <div className="bg-[#1D2736] rounded-full text-white text-center px-4 sm:px-6 py-2 text-xs sm:text-sm md:text-base lg:text-lg cursor-pointer transition-all duration-300 hover:bg-[#253345] w-fit">
-                    More Details
+              <h2 className=" text-sm md:text-lg lg:text-xl font-semibold mb-4 text-center sm:mt-6 mt-2">
+                {language === "en" ? category.name : category.nameAr}
+              </h2>
+
+              <Link to={`/category-details/${category._id}`} className="w-full">
+                <div className="w-full flex justify-center">
+                  <div className={`bg-[#1E293B] text-white font-tajwal text-xs px-3 py-2 lg:text-xl text-center lg:px-6 lg:py-2 rounded hover:bg-[#334155] transition ${language === "en" ? "!font-sans" : "!font-noto"}`}>
+                    {t("showProducts")}
                   </div>
                 </div>
               </Link>

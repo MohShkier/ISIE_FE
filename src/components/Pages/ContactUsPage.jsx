@@ -1,18 +1,21 @@
 import ContactForm from "../SignleProduct/ContactForm";
-
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../../context/LanguageContext';
 function ContactUsForm() {
+  const { language, changeLanguage } = useLanguage();
+  const { t, i18n } = useTranslation();
   return (
     <>
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 lg:pt-44 pt-36">
-        <h1 className="text-5xl  mb-10 font-customGurajada">Get in touch</h1>
+        <h1 className="text-5xl  mb-10 ">{t("getIn")}</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-12">
           {/* Left Section */}
-          <div className="bg-gradient-to-bl from-[#0A1A33] to-[#1D2736B2] p-8 rounded-lg text-white shadow-lg space-y-8">
+          <div className="bg-gradient-to-bl from-[#0A1A33] to-[#1D2736B2] p-8 rounded-lg text-white  space-y-8">
             {/* Visit Us Section */}
             <section>
               <h2 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                <i className="fas fa-map-marker-alt text-blue-300"></i> Visit us
+                <i className="fas fa-map-marker-alt text-blue-300"></i> {t("Visit Us")}
               </h2>
               <div className="w-full h-52">
                 <iframe
@@ -25,15 +28,15 @@ function ContactUsForm() {
                   aria-label="Google Maps location of our office"
                 ></iframe>
               </div>
-              <p className="mt-2 text-gray-300">Come say hello at our office.</p>
+              <p className={`mt-2 text-gray-300 ${language === "ar" ? "font-noto" : "font-sans"}`}>{t("ComeSay")}</p>
             </section>
 
             {/* Chat Section */}
             <section>
               <h2 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                <i className="fas fa-comments text-blue-300"></i> Chat with us
+                <i className="fas fa-comments text-blue-300"></i> {t("Chat With Us")}
               </h2>
-              <p className="text-gray-300">Our friendly team is here to help.</p>
+              <p className={`text-gray-300 ${language === "ar" ? "font-noto" : "font-sans"}`}>{t("ourFriendly")}</p>
               <a
                 href="mailto:info@ishraqitshams.com"
                 className="mt-2 inline-block bg-blue-600 px-5 py-2 rounded-lg text-white hover:bg-blue-500 transition"
@@ -45,10 +48,10 @@ function ContactUsForm() {
             {/* Call Us Section */}
             <section>
               <h2 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                <i className="fas fa-phone-alt text-blue-300"></i> Call us
+                <i className="fas fa-phone-alt text-blue-300"></i>{t("Call Us")}
               </h2>
-              <p className="text-gray-300">
-                <strong>Sun - Thu</strong> from <strong>8 AM to 5 PM</strong>
+              <p className={`${language === "ar" ? "font-noto" : "font-sans"} text-gray-300`}>
+                {t("duration")}
               </p>
               <a
                 href="tel:+96264161314"

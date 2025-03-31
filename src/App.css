@@ -6,8 +6,26 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'poppinscustom';
+  src: url('/public/fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'tajwalcustom';
+  src: url('/public/fonts/Tajawal-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'notocustom';
+  src: url('/public/fonts/noto.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
   .signup-form-container {
     display: flex;
@@ -35,4 +53,3 @@
     -webkit-text-fill-color: #ffffff !important; /* Set white text color for dark mode */
   }
   
-
