@@ -45,7 +45,7 @@ function CategoryDetails() {
         const categoryResponse = await fetch(`https://isie-management-system.onrender.com/api/categories/${id}/products`);
         if (!categoryResponse.ok) throw new Error("Failed to fetch category details");
         const categoryData = await categoryResponse.json();
-        setCategoryName(categoryData.category.name);
+        setCategoryName(language === "en" ? categoryData.category.name : categoryData.category.nameAr);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -83,7 +83,7 @@ function CategoryDetails() {
     <div className="w-full flex flex-col items-center pt-36 lg:pt-44 lg:mb-10 mb-20 min-h-screen">
       <div className="flex items-center w-full max-w-[1550px] mx-auto px-3 sm:px-12">
         <h2 className="lg:text-5xl text-3xl text-gray-800">
-          {categoryName ? `Category: ${categoryName}` : "Our Products"}
+          {language === "ar" ? `${t("category")} : ${categoryName}` : `${t("category")} : ${categoryName}`}
         </h2>
       </div>
 
@@ -133,19 +133,20 @@ function CategoryDetails() {
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
-          className="bg-gray-700 text-white px-4 py-2 rounded-lg disabled:opacity-50"
+          className={"bg-gray-700 text-white px-4 py-2 rounded-lg disabled:opacity-50 " + `${language === "ar" ? "mx-4" : null}`}
         >
-          Previous
+                    {t("Previous")}
         </button>
-        <span className="text-lg font-bold">{`Page ${currentPage} of ${totalPages}`}</span>
+        <span className="text-lg font-bold">{`${t("Page")} ${currentPage} ${t("of")} ${totalPages || 1}`}</span>
         <button
           onClick={() => currentPage < totalPages && setCurrentPage((prev) => prev + 1)}
           disabled={currentPage >= totalPages}
           className="bg-gray-700 text-white px-4 py-2 rounded-lg disabled:opacity-50"
         >
-          Next
+          {t("Next")}
         </button>
       </div>
+
     </div>
   );
 }

@@ -51,10 +51,10 @@ function AboutUs() {
                 {/* Content */}
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
                     <div className="flex flex-col justify-center text-left md:text-left gap-4">
-                        <h2 className={`text-7xl text-gray-800 xl:text-left text-center ${language === "ar" ? "!text-right" : ""}`}>
+                        <h2 className={`text-3xl xl:text-5xl text-gray-800 xl:text-left text-center ${language === "ar" ? "!text-right" : ""}`}>
                             {t("Mission")}
                         </h2>
-                        <div className="flex flex-col gap-5 text-2xl">
+                        <div className="flex flex-col gap-5 text-lg lg:text-2xl">
                             <p className="mt-4">
                                 At ISIE, our mission is to provide high-quality industrial equipment that enhances
                                 efficiency, safety, and productivity in the mining and industrial sectors.
@@ -99,7 +99,7 @@ function AboutUs() {
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
                     {/* Left Side: Vision Text */}
                     <div className="flex flex-col justify-center text-left md:text-left gap-4">
-                    <h2 className={`text-7xl text-white xl:text-left text-center ${language === "ar" ? "!text-right" : ""}`}>
+                    <h2 className={`text-3xl xl:text-5xl text-white xl:text-left text-center ${language === "ar" ? "!text-right" : ""}`}>
                     {t("Vision")}</h2>
                         <div className="flex flex-col gap-4 text-2xl text-gray-300 leading-relaxed">
                             <p className="mt-4">
@@ -145,7 +145,7 @@ function AboutUs() {
                 {/* Content */}
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
                     <div className="flex flex-col justify-center text-left md:text-left gap-4">
-                    <h2 className={`text-7xl text-gray-800  xl:text-left text-center ${language === "ar" ? "!text-right" : ""}`}>
+                    <h2 className={`text-3xl xl:text-5xl text-gray-800  xl:text-left text-center ${language === "ar" ? "!text-right" : ""}`}>
                             {t("WhyAreWe")}
                         </h2>
                         <div className="flex flex-col gap-4 text-2xl">
@@ -170,7 +170,7 @@ function AboutUs() {
                 <div className="flex items-center w-full px-4 justify-center pt-24">
                     <div className="flex items-center w-full max-w-7xl">
                         <div className="flex-1 border-t border-gray-400"></div>
-                        <h2 className="mx-4 text-5xl lg:text-7xl   text-gray-800">{t("OurTeam")}</h2>
+                        <h2 className="mx-4 text-3xl xl:text-5xl   text-gray-800">{t("OurTeam")}</h2>
                         <div className="flex-1 border-t border-gray-400"></div>
                     </div>
                 </div>
