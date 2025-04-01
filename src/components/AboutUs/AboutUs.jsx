@@ -51,7 +51,7 @@ function AboutUs() {
                 {/* Content */}
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
                     <div className="flex flex-col justify-center text-left md:text-left gap-4">
-                        <h2 className={`text-3xl xl:text-5xl text-gray-800 text-left t ${language === "ar" ? "!text-right" : ""}`}>
+                        <h2 className={`text-3xl xl:text-5xl text-gray-800 text-left  ${language === "ar" ? "!text-right" : ""}`}>
                             {t("Mission")}
                         </h2>
                         <div className={`flex flex-col gap-5 text-lg lg:text-2xl leading-relaxed ${language === "ar" ? "!text-right" : ""}`}>
@@ -98,7 +98,7 @@ function AboutUs() {
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
                     {/* Left Side: Vision Text */}
                     <div className="flex flex-col justify-center text-left md:text-left gap-4">
-                    <h2 className={`text-3xl xl:text-5xl text-white xl:text-left text-center ${language === "ar" ? "!text-right" : ""}`}>
+                    <h2 className={`text-3xl xl:text-5xl text-white xl:text-left  ${language === "ar" ? "!text-right" : ""}`}>
                     {t("Vision")}</h2>
                     <div className={`flex flex-col gap-5 text-lg lg:text-2xl leading-relaxed ${language === "ar" ? "!text-right " : ""}`}>
                     <p className={`mt-2 sm:mt-2 ${language === "ar" ? "font-noto" : "font-sans"}`}>
@@ -141,7 +141,7 @@ function AboutUs() {
                 {/* Content */}
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
                     <div className="flex flex-col justify-center text-left md:text-left gap-4">
-                    <h2 className={`text-3xl xl:text-5xl text-gray-800  xl:text-left text-center ${language === "ar" ? "!text-right" : ""}`}>
+                    <h2 className={`text-3xl xl:text-5xl text-gray-800  xl:text-left  ${language === "ar" ? "!text-right" : ""}`}>
                             {t("WhyAreWe")}
                         </h2>
                         <div className="flex flex-col gap-4 text-2xl">
