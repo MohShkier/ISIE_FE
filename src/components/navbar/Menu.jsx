@@ -64,6 +64,8 @@ function Menu({sideBar}) {
                 </NavLink>
 
                 <NavLink
+                    onClick={sideBar}
+
                     to={"contactus"}
                     className={({ isActive }) =>
                         `flex flex-row-reverse gap-4 items-center transition !text-sm ${isActive ? "text-[#4D98E5] font-semibold" : "hover:text-[#4D98E5]"
