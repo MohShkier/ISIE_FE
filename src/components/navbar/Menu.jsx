@@ -4,13 +4,16 @@ import HomeIcon from "../Svg/Home";
 import LineIcon from "../Svg/Line";
 import ProductsIcon from "../Svg/Products";
 import AboutIcon from "../Svg/About";
+import { useTranslation } from "react-i18next";
 
 import { useLanguage } from '../../context/LanguageContext';
+import { NavLink } from "react-router-dom";
 
-function Menu() {
-  const { language, changeLanguage } = useLanguage();
+function Menu({sideBar}) {
+    const { t } = useTranslation();
+    const { language, changeLanguage } = useLanguage();
     return (
-        <div className="flex flex-col h-screen min-h-screen !max-h-screen bg-[#0A1A33] w-full justify-end items-end ">
+        <div className="flex flex-col h-screen min-h-screen !max-h-screen bg-[#0A1A33] w-full justify-end items-start ">
             {/* Header */}
             <div className="flex justify-end items-center gap-1 p-3">
                 <img src="/image2.png" className="w-[74px] h-[74px]" />
@@ -18,43 +21,78 @@ function Menu() {
 
             </div>
 
-            <div className="w-full h-px bg-white mx-3 my-3" />
+            <div className="w-full h-px bg-white  my-3" />
 
             {/* Menu Items */}
-            <div className="flex flex-col items-end gap-6 px-3 mt-4">
-                <div className="flex flex-row-reverse gap-4 items-center  !text-sm">
-                    <HomeIcon className={"size-5"} />
-                    الرئيسية
-                </div>
+            <div className="flex flex-col items-start gap-6 px-3 mt-4">
+                <NavLink
+                    onClick={sideBar}
+                    to={"/"}
+                    className={({ isActive }) =>
+                        `flex flex-row-reverse gap-4 items-start transition !text-sm ${isActive ? "text-[#4D98E5] font-semibold" : "hover:text-[#4D98E5]"
+                        }`
+                    }
+                >
+                    {t("home")}
+                    <HomeIcon className="size-5" />
+                </NavLink>
 
-                <div className="flex flex-row-reverse gap-4 items-center  !text-sm">
-                    <ProductsIcon className={"size-5"} />
-                    المنتجات
-                </div>
+                <NavLink
+                    onClick={sideBar}
 
+                    to={"products"}
+                    className={({ isActive }) =>
+                        `flex flex-row-reverse gap-4 items-center transition !text-sm ${isActive ? "text-[#4D98E5] font-semibold" : "hover:text-[#4D98E5]"
+                        }`
+                    }
+                >
+                    {t("Products")}
+                    <ProductsIcon className="size-5" />
+                </NavLink>
 
-                <div className="flex flex-row-reverse gap-4 items-center  !text-sm">
-                    <CategoryIcon className={"size-5"} />
-                    الأصناف
-                </div>
+                <NavLink
+                    onClick={sideBar}
 
+                    to={"categories"}
+                    className={({ isActive }) =>
+                        `flex flex-row-reverse gap-4 items-center transition !text-sm ${isActive ? "text-[#4D98E5] font-semibold" : "hover:text-[#4D98E5]"
+                        }`
+                    }
+                >
+                    {t("categories")}
+                    <CategoryIcon className="size-5" />
+                </NavLink>
 
-                <div className="flex flex-row-reverse gap-4 items-center  !text-sm">
-                    <ContactIcon className={"size-5"} />
-                    تواصل معنا
-                </div>
+                <NavLink
+                    to={"contactus"}
+                    className={({ isActive }) =>
+                        `flex flex-row-reverse gap-4 items-center transition !text-sm ${isActive ? "text-[#4D98E5] font-semibold" : "hover:text-[#4D98E5]"
+                        }`
+                    }
+                >
+                    {t("contactUs")}
+                    <ContactIcon className="size-5" />
+                </NavLink>
 
-                <div className="flex flex-row-reverse gap-4 items-center  !text-sm">
-                    <AboutIcon className={"size-5"} />
-                    من نحن
-                </div>
+                <NavLink
+                    onClick={sideBar}
+
+                    to={"about"}
+                    className={({ isActive }) =>
+                        `flex flex-row-reverse gap-4 items-center transition !text-sm ${isActive ? "text-[#4D98E5] font-semibold" : "hover:text-[#4D98E5]"
+                        }`
+                    }
+                >
+                    {t("aboutUs")}
+                    <AboutIcon className="size-5" />
+                </NavLink>
             </div>
+
 
             {/* Footer */}
             <div className="mt-auto mb-3 flex justify-end px-3  bottom-5 sticky">
-          
-                <div className="flex items-center gap-2 border border-white rounded-lg px-2 py-1" onClick={() => changeLanguage(language === 'en' ? 'ar' : 'en')}>
-                    <span className="text-white text-sm font-tajawal">عربي</span>
+
+                <div className="flex cursor-pointer items-center gap-2 border border-white rounded-lg px-2 py-1" onClick={() => changeLanguage(language === 'en' ? 'ar' : 'en')}>
                     <svg
                         width="16"
                         height="16"
@@ -75,6 +113,7 @@ function Menu() {
                             </clipPath>
                         </defs>
                     </svg>
+                    <span className="text-white text-sm font-tajawal">{t("arabic")}</span>
                 </div>
             </div>
         </div>

@@ -43,7 +43,7 @@ function CategoryPage() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col items-center mt-20 lg:mb-10 mb-20 min-h-screen lg:pt-24 pt-16">
+    <div className="w-full flex flex-col items-center pt-36 lg:pt-44 lg:mb-10 mb-20 ">
 
       <div className="flex items-center w-full max-w-[1550px] mx-auto px-3 sm:px-12">
         <h2 className="lg:text-5xl text-3xl text-gray-800">

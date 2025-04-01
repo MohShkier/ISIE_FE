@@ -38,6 +38,8 @@ function Home() {
                 </div>
             </div>
             <ProductSection />
+
+
         </>
     );
 }

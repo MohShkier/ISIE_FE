@@ -38,8 +38,13 @@
   "aboutUsHero1": "ISIE is a company specializing in industrial equipment.",
   "aboutUsHero2": "Our company has been operating since 2014.",
   "Mission": "Mission",
-  "Vision" : "Vision",
-  "WhyAreWe" : "Why Are We Here ?",
-  "OurTeam" : "Our Team",
-  "OurClient" : "Our Client"
+  "Vision": "Vision",
+  "WhyAreWe": "Why Are We Here ?",
+  "OurTeam": "Our Team",
+  "OurClient": "Our Client",
+  "Products": "Products",
+  "arabic":"English",
+  "ImportantLinks" : "Important Links",
+  "ISIE": "Ishraqit Shams industrial Equipment"
+
 }
