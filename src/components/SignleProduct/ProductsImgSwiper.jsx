@@ -93,7 +93,7 @@ function ProductImgSwiper({ product }) {
               {language === "en" ? product.description : product.descriptionAr}
           </p>
 
-          <div className={"flex space-x-4 flex-col-reverse sm:flex-row  lg:justify-end justify-start pt-12 xl:pt-20 " + `${language === "ar" ? "gap-3" : null}`}>
+          <div className={"flex space-x-4 flex-col-reverse sm:flex-row  lg:justify-end justify-start pt-12 xl:pt-20 gap-3 sm:gap-0 " + `${language === "ar" ? "!gap-3" : null}`}>
           <a href="https://wa.me/+962798337984"> {/* WhatsApp Button */}
             <motion.button
               whileHover={{ scale: 1.05 }}
