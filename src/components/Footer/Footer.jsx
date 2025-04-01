@@ -25,7 +25,7 @@ const Footer = () => {
         <div className="flex flex-col items-start gap-4">
         <div className="flex items-center space-x-2 rtl:space-x-reverse ">
           <FaLocationDot className="text-[#4D98E5] size-5" />
-          <span>Amman - Jordan</span>
+          <span>{t("AmmanJordan")}</span>
         </div>
   
         <div className="flex items-center space-x-2 rtl:space-x-reverse">
