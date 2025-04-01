@@ -46,5 +46,10 @@
   "arabic":"English",
   "ImportantLinks" : "Important Links",
   "ISIE": "Ishraqit Shams industrial Equipment",
-  "category" : "Category"
+  "category" : "Category",
+  "missionDesc1" :"At ISIE, our mission is to provide high-quality industrial equipment that enhances efficiency, safety, and productivity in the mining and industrial sectors.",
+  "missionDesc2" : " We are committed to delivering innovative solutions tailored to industry needs, ensuring reliability, durability, and optimal performance in every product we offer.",
+  "visionDesc1" : " Our vision is to drive progress in the mining and industrial sectors by delivering cutting-edge solutions that enhance operational efficiency and sustainability.",
+  "visionDesc2" : "We aim to expand our global reach, build long-term partnerships, and continuously evolve to meet the ever-changing demands of the industry while maintaining the highest standards of quality and service",
+  "whyDesc":"At ISIE, our mission is to provide high-quality industrial equipment that enhances efficiency, safety, and productivity in the mining and industrial sectors"
 }

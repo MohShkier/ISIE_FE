@@ -20,8 +20,8 @@ function AboutUs() {
                     <div className="absolute inset-0 bg-[#1D2736]/80"></div>
 
                     {/* Text Content (Above Overlay) */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 gap-10 ">
-                        <h1 className="text-white text-7xl ">{t("About Us")}</h1>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 gap-5 md:gap-10 ">
+                        <h1 className="text-white text-4xl md:text-7xl  ">{t("About Us")}</h1>
                         <p className="text-white text-lg md:text-xl mt-2 max-w-[90%] md:max-w-[60%] font-sans">
                             {t("aboutUsHero1")}
                             <br />
@@ -51,17 +51,16 @@ function AboutUs() {
                 {/* Content */}
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
                     <div className="flex flex-col justify-center text-left md:text-left gap-4">
-                        <h2 className={`text-3xl xl:text-5xl text-gray-800 xl:text-left text-center ${language === "ar" ? "!text-right" : ""}`}>
+                        <h2 className={`text-3xl xl:text-5xl text-gray-800 text-left t ${language === "ar" ? "!text-right" : ""}`}>
                             {t("Mission")}
                         </h2>
-                        <div className="flex flex-col gap-5 text-lg lg:text-2xl">
-                            <p className="mt-4">
-                                At ISIE, our mission is to provide high-quality industrial equipment that enhances
-                                efficiency, safety, and productivity in the mining and industrial sectors.
+                        <div className={`flex flex-col gap-5 text-lg lg:text-2xl leading-relaxed ${language === "ar" ? "!text-right" : ""}`}>
+                        <p className={`mt-2 sm:mt-2 ${language === "ar" ? "font-noto" : "font-sans"}`}>
+                        {t("missionDesc1")}
                             </p>
-                            <p>
-                                We are committed to delivering innovative solutions tailored to industry needs, ensuring
-                                reliability, durability, and optimal performance in every product we offer.
+                            <p className={`mt-2 sm:mt-2 ${language === "ar" ? "font-noto" : "font-sans"}`}>
+                            {t("missionDesc2")}
+
                             </p>
                         </div>
                     </div>
@@ -101,15 +100,12 @@ function AboutUs() {
                     <div className="flex flex-col justify-center text-left md:text-left gap-4">
                     <h2 className={`text-3xl xl:text-5xl text-white xl:text-left text-center ${language === "ar" ? "!text-right" : ""}`}>
                     {t("Vision")}</h2>
-                        <div className="flex flex-col gap-4 text-2xl text-gray-300 leading-relaxed">
-                            <p className="mt-4">
-                                Our vision is to drive progress in the mining and industrial sectors by
-                                delivering cutting-edge solutions that enhance operational efficiency and sustainability.
+                    <div className={`flex flex-col gap-5 text-lg lg:text-2xl leading-relaxed ${language === "ar" ? "!text-right " : ""}`}>
+                    <p className={`mt-2 sm:mt-2 ${language === "ar" ? "font-noto" : "font-sans"}`}>
+                    {t("visionDesc1")}
                             </p>
-                            <p>
-                                We aim to expand our global reach, build long-term partnerships, and continuously evolve
-                                to meet the ever-changing demands of the industry while maintaining the highest standards
-                                of quality and service.
+                            <p className={`mt-2 sm:mt-2 ${language === "ar" ? "font-noto" : "font-sans"}`}>
+                            {t("visionDesc2")}
                             </p>
                         </div>
                     </div>
@@ -149,9 +145,8 @@ function AboutUs() {
                             {t("WhyAreWe")}
                         </h2>
                         <div className="flex flex-col gap-4 text-2xl">
-                            <p className="mt-4">
-                                At ISIE, our mission is to provide high-quality industrial equipment that
-                                enhances efficiency, safety, and productivity in the mining and industrial sectors.
+                        <p className={`mt-2 sm:mt-2 ${language === "ar" ? "font-noto !text-right" : "font-sans"}`}>
+                        {t("whyDesc")}
                             </p>
                         </div>
                     </div>
