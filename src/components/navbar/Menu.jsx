@@ -30,7 +30,7 @@ function Menu({sideBar}) {
                     to={"/"}
                     className={({ isActive }) =>
                         `flex flex-row-reverse gap-4 items-start transition !text-sm ${isActive ? "text-[#4D98E5] font-semibold" : "hover:text-[#4D98E5]"
-                        }`
+                        } ${language === "ar" ? "font-noto" : "font-sans"}`
                     }
                 >
                     {t("home")}
@@ -43,7 +43,8 @@ function Menu({sideBar}) {
                     to={"products"}
                     className={({ isActive }) =>
                         `flex flex-row-reverse gap-4 items-center transition !text-sm ${isActive ? "text-[#4D98E5] font-semibold" : "hover:text-[#4D98E5]"
-                        }`
+                                              } ${language === "ar" ? "font-noto" : "font-sans"}`
+
                     }
                 >
                     {t("Products")}
@@ -56,7 +57,7 @@ function Menu({sideBar}) {
                     to={"categories"}
                     className={({ isActive }) =>
                         `flex flex-row-reverse gap-4 items-center transition !text-sm ${isActive ? "text-[#4D98E5] font-semibold" : "hover:text-[#4D98E5]"
-                        }`
+                        } ${language === "ar" ? "font-noto" : "font-sans"}`
                     }
                 >
                     {t("categories")}
@@ -69,7 +70,7 @@ function Menu({sideBar}) {
                     to={"contactus"}
                     className={({ isActive }) =>
                         `flex flex-row-reverse gap-4 items-center transition !text-sm ${isActive ? "text-[#4D98E5] font-semibold" : "hover:text-[#4D98E5]"
-                        }`
+                        } ${language === "ar" ? "font-noto" : "font-sans"}`
                     }
                 >
                     {t("contactUs")}
@@ -82,7 +83,7 @@ function Menu({sideBar}) {
                     to={"about"}
                     className={({ isActive }) =>
                         `flex flex-row-reverse gap-4 items-center transition !text-sm ${isActive ? "text-[#4D98E5] font-semibold" : "hover:text-[#4D98E5]"
-                        }`
+                        } ${language === "ar" ? "font-noto" : "font-sans"}`
                     }
                 >
                     {t("aboutUs")}
@@ -115,7 +116,7 @@ function Menu({sideBar}) {
                             </clipPath>
                         </defs>
                     </svg>
-                    <span className="text-white text-sm font-tajawal">{t("arabic")}</span>
+                    <span className={`text-white text-sm ${language === "ar" ? "font-noto" : "font-sans"}`}>{t("arabic")}</span>
                 </div>
             </div>
         </div>
