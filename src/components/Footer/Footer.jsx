@@ -8,18 +8,18 @@ import { useTranslation } from "react-i18next";
 const Footer = () => {
   const { t } = useTranslation();
   return (
-    <footer className="bg-[#0a192f] text-white py-10 relative max-lg:!pb-24">
+    <footer className="bg-[#0a192f] text-white py-10 relative max-lg:!pb-12">
     <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
   
       {/* Logo Section */}
-      <div className="flex justify-center md:justify-start py-10 mx-10 ">
+      <div className="flex justify-center md:justify-start py-5 md:py-10 mx-5 md:mx-10 ">
         <div className="relative flex items-center justify-center w-44 h-32">
           <img src="/logo1.png" alt="Ishraqit Shams Logo" className="w-full h-auto" />
         </div>
       </div>
   
       {/* Contact Info */}
-      <div className="flex flex-col space-y-5 items-center md:items-start text-center sm:text-left   mt-10 font-sans">
+      <div className="flex flex-col space-y-5 items-center md:items-start text-center sm:text-left  mt-5 md:mt-10 font-sans">
   
         <h2 className="text-xl font-semibold font-poppins">{t("ISIE")}</h2>
         <div className="flex flex-col items-start gap-4">
@@ -41,7 +41,7 @@ const Footer = () => {
       </div>
   
       {/* Important Links */}
-      <div className="flex flex-col space-y-4 items-center md:items-start mt-10 font-sans ">
+      <div className="flex flex-col space-y-4 items-center md:items-start mt-5 md:mt-10 font-sans ">
         <h2 className="text-xl font-semibold font-poppins">{t("ImportantLinks")}</h2>
   
        <div className="flex flex-col items-start gap-3">
