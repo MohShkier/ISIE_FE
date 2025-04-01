@@ -58,7 +58,7 @@ console.log(data)
           ) : data.length > 0 ? (
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
-              autoplay={{ delay: 2000, disableOnInteraction: false }}
+              autoplay={{ delay: 2000, disableOnInteraction: true }}
               spaceBetween={25}
               breakpoints={{
                 310: { slidesPerView: 2 },
