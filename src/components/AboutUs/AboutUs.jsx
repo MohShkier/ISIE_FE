@@ -170,7 +170,7 @@ function AboutUs() {
                     </div>
                 </div>
 
-                <div className="flex justify-center flex-col md:flex-row gap-20 pt-14">
+                <div className="flex justify-center flex-col md:flex-row gap-10 md:gap-20 md:pt-14 pt-6">
                     <div className="flex flex-col justify-center gap-y-2 items-center">
                         <img src="person.png" className="size-72" />
                         <h2 className="text-[#1D2736] font-bold text-center ">Eng. Iyad Shawish</h2>
