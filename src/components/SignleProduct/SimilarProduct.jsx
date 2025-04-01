@@ -46,11 +46,9 @@ function SimilarProducts({ categoryId }) {
   return (
     <div className="w-full flex flex-col items-center !mb-20">
       <div className="flex items-center w-full max-w-7xl px-4">
-        <div className="flex-grow border-t border-gray-400"></div>
-        <h2 className="mx-4 text-5xl text-gray-800 ">
-          {t("Similar Products")}
-        </h2>
-        <div className="flex-grow border-t border-gray-400"></div>
+      <div className="flex-grow border-t border-gray-400"></div>
+          <h2 className="mx-4  text-gray-800 text-3xl xl:text-5xl ">{t("Similar Products")}</h2>
+          <div className="flex-grow border-t border-gray-400"></div>
       </div>
 
       {loading ? (
