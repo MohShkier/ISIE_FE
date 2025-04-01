@@ -54,8 +54,8 @@ const ContactForm = () => {
           <input
             {...register("firstName")}
             placeholder={t("First Name")}
-            className="mt-1 block w-full border border-gray-300 rounded-md  p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500"
-          />
+            className={`mt-1 block w-full border border-gray-300 rounded-md p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500 ${language === "ar" ? "font-noto" : "font-sans"} `}
+            />
           <p className="text-red-500 text-sm">{errors.firstName?.message}</p>
         </div>
 
@@ -65,8 +65,8 @@ const ContactForm = () => {
           <input
             {...register("lastName")}
             placeholder={t("Last Name")}
-            className="mt-1 block w-full border border-gray-300 rounded-md  p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500"
-          />
+            className={`mt-1 block w-full border border-gray-300 rounded-md p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500 ${language === "ar" ? "font-noto" : "font-sans"} `}
+            />
           <p className="text-red-500 text-sm">{errors.lastName?.message}</p>
         </div>
       </div>
@@ -75,10 +75,11 @@ const ContactForm = () => {
       <div>
         <label className="block text-sm font-medium text-gray-700">{t("E-Mail")}</label>
         <input
+        
           {...register("email")}
           type="email"
           placeholder="example@email.com"
-          className="mt-1 block w-full border border-gray-300 rounded-md p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500"
+          className={`mt-1 block w-full border border-gray-300 rounded-md p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500 ${language === "ar" ? "font-noto" : "font-sans"} `}
         />
         <p className="text-red-500 text-sm">{errors.email?.message}</p>
       </div>
@@ -89,7 +90,7 @@ const ContactForm = () => {
         <input
           {...register("company")}
           placeholder={t("Company Name")}
-          className="mt-1 block w-full border border-gray-300 rounded-md  p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500"
+          className={`mt-1 block w-full border border-gray-300 rounded-md p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500 ${language === "ar" ? "font-noto" : "font-sans"} `}
         />
         <p className="text-red-500 text-sm">{errors.company?.message}</p>
       </div>
@@ -101,7 +102,7 @@ const ContactForm = () => {
           {...register("phone")}
           type="tel"
           placeholder="+1234567890"
-          className="mt-1 block w-full border border-gray-300 rounded-md  p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500"
+          className={`mt-1 block w-full border border-gray-300 rounded-md p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500 ${language === "ar" ? "font-noto" : "font-sans"} `}
         />
         <p className="text-red-500 text-sm">{errors.phone?.message}</p>
       </div>
@@ -113,7 +114,7 @@ const ContactForm = () => {
           {...register("message")}
           rows="4"
           placeholder={t("tellUs")}
-          className="mt-1 block w-full border border-gray-300 rounded-md  p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500"
+          className={`mt-1 block w-full border border-gray-300 rounded-md p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500 ${language === "ar" ? "font-noto" : "font-sans"} `}
         ></textarea>
         <p className="text-red-500 text-sm">{errors.message?.message}</p>
       </div>
@@ -122,9 +123,9 @@ const ContactForm = () => {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-[#1D2736] text-white py-2 px-4 rounded-md hover:bg-blue-700 transition !mt-16"
+        className={`w-full bg-[#1D2736] text-white py-2 px-4 rounded-md hover:bg-blue-700 transition !mt-8 md:!mt-16   ${language === "ar" ? "font-noto" : "font-sans"}`}
       >
-        {isSubmitting ? "Submitting..." : "Submit"}
+        {isSubmitting ? "Submitting..." : t("submit")}
       </button>
     </form>
   );
