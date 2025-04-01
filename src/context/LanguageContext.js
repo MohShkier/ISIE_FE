@@ -7,7 +7,7 @@ const LanguageContext = createContext();
 export const useLanguage = () => useContext(LanguageContext);
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState(Cookies.get('i18next') || 'en'); // Default to 'en'
+  const [language, setLanguage] = useState(Cookies.get('i18next') || 'ar'); // Default to 'en'
 
   useEffect(() => {
     // Change language in i18n
