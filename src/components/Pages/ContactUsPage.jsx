@@ -41,7 +41,7 @@ function ContactUsForm() {
                 href="mailto:info@ishraqitshams.com"
                 className="mt-2 inline-block bg-blue-600 px-5 py-2 rounded-lg text-white hover:bg-blue-500 transition"
               >
-                <i className="fas fa-envelope mr-2"></i> info@ishraqitshams.com
+                <i className={`fas fa-envelope  ${language === "ar" ? "ml-2" : "mr-2"}`  }></i>info@ishraqitshams.com
               </a>
             </section>
 
