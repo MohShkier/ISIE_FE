@@ -39,7 +39,7 @@ function ContactUsForm() {
               <p className={`text-gray-300 ${language === "ar" ? "font-noto" : "font-sans"}`}>{t("ourFriendly")}</p>
               <a
                 href="mailto:info@ishraqitshams.com"
-                className="mt-2 inline-block bg-blue-600 px-5 py-2 rounded-lg text-white hover:bg-blue-500 transition"
+                className={`mt-2 inline-block bg-blue-600 px-5 py-2 rounded-lg text-white hover:bg-blue-500 transition font-sans`}
               >
                 <i className={`fas fa-envelope  ${language === "ar" ? "ml-2" : "mr-2"}`  }></i>info@ishraqitshams.com
               </a>
@@ -55,7 +55,7 @@ function ContactUsForm() {
               </p>
               <a
                 href="tel:+96264161314"
-                className="mt-2 inline-block bg-green-600 px-5 py-2 rounded-lg text-white hover:bg-green-500 transition"
+                className={`mt-2 inline-block bg-green-600 px-5 py-2 rounded-lg text-white hover:bg-green-500 transition font-sans`}
               >
                 <i className="fas fa-phone mr-2"></i> +(962) 064161314
               </a>
