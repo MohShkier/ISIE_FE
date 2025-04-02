@@ -66,7 +66,7 @@ function CategoryPage() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false }}
-              className="bg-[#1D27361A] rounded-lg  p-2 sm:p-6 flex flex-col items-center"
+              className="bg-[#1D27361A] rounded-lg  p-2 sm:p-6 flex flex-col items-center flex-grow"
             >
               <Link to={`/category-details/${category._id}`} className="block w-full">
                 <img
@@ -80,7 +80,7 @@ function CategoryPage() {
                 {language === "en" ? category.name : category.nameAr}
               </h2>
 
-              <Link to={`/category-details/${category._id}`} className="w-full">
+              <Link to={`/category-details/${category._id}`} className="w-full mt-auto">
                 <div className="w-full flex justify-center">
                   <div className={`bg-[#1E293B] text-white font-tajwal text-xs px-3 py-2 lg:text-xl text-center lg:px-6 lg:py-2 rounded hover:bg-[#334155] transition ${language === "en" ? "!font-sans" : "!font-noto"}`}>
                     {t("showProducts")}

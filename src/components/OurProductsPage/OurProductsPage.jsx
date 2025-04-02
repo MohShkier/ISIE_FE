@@ -74,7 +74,7 @@ function OurProductsPage() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false }}
-          className="bg-[#1D27361A] rounded-lg p-2 sm:p-6 flex flex-col h-full"
+          className="bg-[#1D27361A] rounded-lg p-2 sm:p-6 flex flex-col h-full flex-grow"
         >
           <Link to={`/product-details/${product._id}`} className="block w-full">
             <img
@@ -89,7 +89,7 @@ function OurProductsPage() {
           </h2>
 
           <div className="mt-auto">
-            <Link to={`/product-details/${product._id}`} className="w-full">
+            <Link to={`/product-details/${product._id}`} className="w-full mt-auto">
               <div className="w-full flex justify-center">
                 <div
                   className={`bg-[#1E293B] text-white font-tajwal text-xs px-3 py-2 lg:text-xl text-center lg:px-6 lg:py-2 rounded hover:bg-[#334155] transition ${
