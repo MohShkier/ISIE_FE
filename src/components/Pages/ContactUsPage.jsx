@@ -6,6 +6,29 @@ function ContactUsForm() {
   const { t, i18n } = useTranslation();
   return (
     <>
+      <div className="relative w-full ">
+                    {/* Background Image with Overlay */}
+                    <div className=" min-h-[350px] md:min-h-[550px] relative w-full mb-auto  flex justify-center !items-center">
+                        <img
+                            src="/contacthero.png"
+                            alt="About Us Background"
+                            className="absolute inset-0 w-full lg:min-h-[550px] h-full !object- md:!object-cover"
+                        />
+                        {/* Semi-transparent overlay */}
+                        <div className="absolute inset-0 bg-[#1D2736]/50"></div>
+    
+                        {/* Text Content (Above Overlay) */}
+                        <div className="absolute inset-0 flex flex-col  items-center justify-end pb-10">
+                           <div className="w-[87%]">
+                           <h1 className={`text-white text-xl md:text-5xl  ${language === "en" ? "" : "text-5xl md:text-7xl"}`}>
+                           Contact Us <br /> <br/> Home >> Contact Us
+                            </h1>
+                           </div>
+                            
+                           
+                        </div>
+                    </div>
+                </div>
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 lg:pt-44 pt-36">
         <h1 className="lg:text-5xl text-3xl  mb-10 ">{t("getIn")}</h1>
 
