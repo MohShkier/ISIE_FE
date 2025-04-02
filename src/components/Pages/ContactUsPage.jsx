@@ -20,7 +20,7 @@ function ContactUsForm() {
                         {/* Text Content (Above Overlay) */}
                         <div className="absolute inset-0 flex flex-col  items-center justify-end pb-10">
                            <div className="w-[87%]">
-                           <h1 className={`text-white text-xl md:text-5xl  ${language === "en" ? "" : "text-5xl md:text-7xl"}`}>
+                           <h1 className={`text-white lg:text-5xl text-3xl  ${language === "en" ? "" : "text-5xl md:text-7xl"}`}>
                            Contact Us <br /> <br/> Home >> Contact Us
                             </h1>
                            </div>
@@ -29,7 +29,7 @@ function ContactUsForm() {
                         </div>
                     </div>
                 </div>
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 lg:pt-44 pt-36">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 ">
         <h1 className="lg:text-5xl text-3xl  mb-10 ">{t("getIn")}</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-12">
