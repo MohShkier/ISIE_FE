@@ -110,7 +110,8 @@ function OurProductsPage() {
 
       <div className="flex justify-center mt-20 space-x-4 ">
         <button
-          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+          onClick={() => {setCurrentPage((prev) => Math.max(prev - 1, 1))
+            window.scrollTo(0, 0)}}
           disabled={currentPage === 1}
           className={"bg-gray-700 text-white px-4 py-2 rounded-lg disabled:opacity-50 " + `${language === "ar" ? "mx-4" : null}`}
         >
@@ -118,7 +119,8 @@ function OurProductsPage() {
         </button>
         <span className="text-lg font-bold">{`${t("Page")} ${currentPage} ${t("of")} ${data?.totalPages || 1}`}</span>
         <button
-          onClick={() => setCurrentPage((prev) => (prev < data?.totalPages ? prev + 1 : prev))}
+          onClick={() => {setCurrentPage((prev) => (prev < data?.totalPages ? prev + 1 : prev))
+            window.scrollTo(0, 0)}}
           disabled={currentPage >= data?.totalPages}
           className="bg-gray-700 text-white px-4 py-2 rounded-lg disabled:opacity-50"
         >
