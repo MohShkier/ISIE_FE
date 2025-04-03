@@ -12,7 +12,7 @@ function ContactUsForm() {
                         <img
                             src="/contacthero.png"
                             alt="About Us Background"
-                            className="absolute inset-0 w-full lg:min-h-[550px] h-full !object- md:!object-cover rtl:scale-x-[-1]"
+                            className="absolute inset-0 w-full lg:min-h-[550px] h-full lg:!object-cover rtl:scale-x-[-1]"
                         />
                         {/* Semi-transparent overlay */}
                         <div className="absolute inset-0 bg-[#1D2736]/50"></div>
@@ -20,7 +20,7 @@ function ContactUsForm() {
                         {/* Text Content (Above Overlay) */}
                         <div className="absolute inset-0 flex flex-col  items-center justify-end pb-10">
                            <div className="w-[87%]">
-                           <h1 className={`text-white text-xl md:text-4xl  ${language === "en" ? "" : "text-5xl md:text-7xl"}`}>
+                           <h1 className={`text-white text-xl md:text-3xl  ${language === "en" ? "" : "text-5xl md:text-7xl"}`}>
                            {t("contactUs")} <br /> <br/>{language === "en" ? "Home >> Contact Us" : "الرئيسية >> تواصل معنا"}
                             </h1>
                            </div>

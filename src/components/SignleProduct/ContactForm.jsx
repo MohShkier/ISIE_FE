@@ -4,18 +4,21 @@ import * as yup from "yup";
 import emailjs from "emailjs-com";
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from "../../context/LanguageContext";
+
 const ContactForm = () => {
   const { language, changeLanguage } = useLanguage();
+  const PUBLIC_EMAILJS_KEY = process.env.REACT_APP_PUBLIC_EMAILJS_KEY;
+  
   // ✅ Validation Schema
   const { t, i18n } = useTranslation();
 
   const validationSchema = yup.object().shape({
-    firstName: yup.string().required("First name is required"),
-    lastName: yup.string().required("Last name is required"),
-    email: yup.string().email("Invalid email").required("Email is required"),
-    company: yup.string().required("Company name is required"),
-    phone: yup.string().matches(/\+?\d{10,15}/, "Invalid phone number").required("Phone number is required"),
-    message: yup.string().required("Message is required"),
+    firstName: yup.string().required(t("First name is required")),
+    lastName: yup.string().required(t("Last name is required")),
+    email: yup.string().email(t("Invalid email")).required(t("Email is required")),
+    company: yup.string().required(t("Company name is required")),
+    phone: yup.string().matches(/\+?\d{10,15}/, t("Invalid phone number")).required(t("Phone number is required")),
+    message: yup.string().required(t("Message is required")),
   });
 
   // ✅ React Hook Form Setup
@@ -32,21 +35,19 @@ const ContactForm = () => {
   const onSubmit = async (data) => {
     try {
       await emailjs.send(
-        "service_fppppsu", // Replace with your EmailJS service ID
-        "template_t8qb89d", // Replace with your EmailJS template ID
+        process.env.REACT_APP_SERVICE_ID, // Replace with your EmailJS service ID
+        process.env.REACT_APP_TEMPLATE_ID_, // Replace with your EmailJS template ID
         data,
-        "PskMBrsqFZhuCfvug" // Replace with your EmailJS user ID (public key)
+        PUBLIC_EMAILJS_KEY // This should be your EmailJS user ID (public key)
       );
-      alert("Message sent successfully!");
       reset(); // Reset the form after submission
     } catch (error) {
-      alert("Failed to send message. Please try again.");
-      console.log(error)
+      console.log(error);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={`${language === "ar" ? "font-noto" : "font-sans"} space-y-4 bg-white p-6 rounded-md `}>
+    <form onSubmit={handleSubmit(onSubmit)} className={`${language === "ar" ? "font-noto" : "font-sans"} space-y-4 bg-white p-6 rounded-md`}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* First Name */}
         <div>
@@ -54,8 +55,8 @@ const ContactForm = () => {
           <input
             {...register("firstName")}
             placeholder={t("First Name")}
-            className={`mt-1 block w-full border border-gray-300 rounded-md p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500 ${language === "ar" ? "font-noto" : "font-sans"} `}
-            />
+            className={`mt-1 block w-full border border-gray-300 rounded-md p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500 ${language === "ar" ? "font-noto" : "font-sans"}`}
+          />
           <p className="text-red-500 text-sm">{errors.firstName?.message}</p>
         </div>
 
@@ -65,8 +66,8 @@ const ContactForm = () => {
           <input
             {...register("lastName")}
             placeholder={t("Last Name")}
-            className={`mt-1 block w-full border border-gray-300 rounded-md p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500 ${language === "ar" ? "font-noto" : "font-sans"} `}
-            />
+            className={`mt-1 block w-full border border-gray-300 rounded-md p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500 ${language === "ar" ? "font-noto" : "font-sans"}`}
+          />
           <p className="text-red-500 text-sm">{errors.lastName?.message}</p>
         </div>
       </div>
@@ -75,11 +76,10 @@ const ContactForm = () => {
       <div>
         <label className="block text-sm font-medium text-gray-700">{t("E-Mail")}</label>
         <input
-        
           {...register("email")}
           type="email"
           placeholder="example@email.com"
-          className={`mt-1 block w-full border border-gray-300 rounded-md p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500 ${language === "ar" ? "font-noto" : "font-sans"} `}
+          className={`mt-1 block w-full border border-gray-300 rounded-md p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500 ${language === "ar" ? "font-noto" : "font-sans"}`}
         />
         <p className="text-red-500 text-sm">{errors.email?.message}</p>
       </div>
@@ -90,7 +90,7 @@ const ContactForm = () => {
         <input
           {...register("company")}
           placeholder={t("Company Name")}
-          className={`mt-1 block w-full border border-gray-300 rounded-md p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500 ${language === "ar" ? "font-noto" : "font-sans"} `}
+          className={`mt-1 block w-full border border-gray-300 rounded-md p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500 ${language === "ar" ? "font-noto" : "font-sans"}`}
         />
         <p className="text-red-500 text-sm">{errors.company?.message}</p>
       </div>
@@ -102,19 +102,19 @@ const ContactForm = () => {
           {...register("phone")}
           type="tel"
           placeholder="+1234567890"
-          className={`mt-1 block w-full border border-gray-300 rounded-md p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500 ${language === "ar" ? "font-noto" : "font-sans"} `}
+          className={`mt-1 block w-full border border-gray-300 rounded-md p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500 ${language === "ar" ? "font-noto" : "font-sans"}`}
         />
         <p className="text-red-500 text-sm">{errors.phone?.message}</p>
       </div>
 
       {/* Message */}
       <div>
-        <label className="block text-sm font-medium text-gray-700">{t("theMessage")}</label>
+        <label className="block text-sm font-medium text-gray-700">{t("Message")}</label>
         <textarea
           {...register("message")}
           rows="4"
-          placeholder={t("tellUs")}
-          className={`mt-1 block w-full border border-gray-300 rounded-md p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500 ${language === "ar" ? "font-noto" : "font-sans"} `}
+          placeholder={t("Tell us more...")}
+          className={`mt-1 block w-full border border-gray-300 rounded-md p-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500 ${language === "ar" ? "font-noto" : "font-sans"}`}
         ></textarea>
         <p className="text-red-500 text-sm">{errors.message?.message}</p>
       </div>
@@ -123,9 +123,9 @@ const ContactForm = () => {
       <button
         type="submit"
         disabled={isSubmitting}
-        className={`w-full bg-[#1D2736] text-white py-2 px-4 rounded-md hover:bg-blue-700 transition !mt-8 md:!mt-16   ${language === "ar" ? "font-noto" : "font-sans"}`}
+        className={`w-full bg-[#1D2736] text-white py-2 px-4 rounded-md hover:bg-blue-700 transition !mt-8 md:!mt-16 ${language === "ar" ? "font-noto" : "font-sans"}`}
       >
-        {isSubmitting ? "Submitting..." : t("submit")}
+        {isSubmitting ? t("Submitting...") : t("Submit")}
       </button>
     </form>
   );
