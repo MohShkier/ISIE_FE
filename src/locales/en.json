@@ -24,7 +24,7 @@
   "Chat With Us": "Chat With Us",
   "ourFriendly": "Our friendly team is here to help.",
   "Call Us": "Call Us",
-  "duration": "Sun - Thu from 8 AM to 5 PM",
+  "duration": "Sat - Thu from 8 AM to 5 PM",
   "getIn": "Get In Touch",
   "First Name": "First Name",
   "Last Name": "Last Name",
@@ -53,5 +53,7 @@
   "visionDesc2" : "We aim to expand our global reach, build long-term partnerships, and continuously evolve to meet the ever-changing demands of the industry while maintaining the highest standards of quality and service",
   "whyDesc":"At ISIE, our mission is to provide high-quality industrial equipment that enhances efficiency, safety, and productivity in the mining and industrial sectors",
   "submit" : "Submit",
-  "AmmanJordan" : "Amman - Jordan"
+  "AmmanJordan" : "Amman - Jordan",
+  "showAllProducts" :  "Show All Products"
+
 }

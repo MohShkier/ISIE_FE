@@ -80,13 +80,22 @@ const ProductSection = () => {
                       {language === "en" ? product.name : product.nameAr}
 
                     </h2>
-                  </Link>
+                  </Link> 
                 </motion.div>
               ))
             ) : (
               <p className="text-center text-gray-500 col-span-full">No products available</p>
             )}
+
         </motion.div>
+        <Link to={`/products`} className="w-full mt-10">
+                    <div className="w-full flex justify-center">
+                      <div className={`text-[#1E293B] border border-[#1E293B] hover:text-white font-tajwal text-xs px-3 py-2 lg:text-xl text-center lg:px-6 lg:py-2 rounded hover:bg-[#334155] transition ${language === "en" ? "!font-sans" : "!font-noto"}`}>
+                        {t("showAllProducts")}
+                      </div>
+                    </div>
+                  </Link>
+        
       </div>
 
       {/* Categories Section */}
