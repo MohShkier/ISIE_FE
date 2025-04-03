@@ -48,7 +48,7 @@ function OurProductsPage() {
   }, [currentPage]);
 
   return (
-    <div className="w-full flex flex-col items-center py-12 lg:mb-10 mb-20 min-h-screen">
+    <div className="w-full flex flex-col items-center  lg:mb-10 mb-20 min-h-screen">
      
      
 
