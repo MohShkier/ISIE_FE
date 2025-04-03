@@ -74,6 +74,7 @@ const ProductSection = () => {
                       src={product.thumbnail}
                       alt={product.name}
                       className="rounded-sm  w-full"
+                      loading="lazy"
                     />
                     <h2 className={`text-sm md:text-lg lg:text-xl font-semibold mb-4 text-center sm:mt-6 mt-2 `}>
                       {language === "en" ? product.name : product.nameAr}
@@ -131,6 +132,8 @@ const ProductSection = () => {
                       src={category.thumbnail}
                       alt={category.name}
                       className="w-full rounded-lg object-contain mb-4"
+                      loading="lazy"
+
                     />
                   </Link>
 
