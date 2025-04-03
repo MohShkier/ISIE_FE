@@ -8,11 +8,11 @@ function ContactUsForm() {
     <>
       <div className="relative w-full ">
                     {/* Background Image with Overlay */}
-                    <div className=" min-h-[350px] md:min-h-[550px] relative w-full mb-auto  flex justify-center !items-center">
+                    <div className=" min-h-[350px] md:min-h-[550px] relative w-full mb-auto  flex justify-center !items-center ">
                         <img
                             src="/contacthero.png"
                             alt="About Us Background"
-                            className="absolute inset-0 w-full lg:min-h-[550px] h-full !object- md:!object-cover"
+                            className="absolute inset-0 w-full lg:min-h-[550px] h-full !object- md:!object-cover rtl:scale-x-[-1]"
                         />
                         {/* Semi-transparent overlay */}
                         <div className="absolute inset-0 bg-[#1D2736]/50"></div>
@@ -21,7 +21,7 @@ function ContactUsForm() {
                         <div className="absolute inset-0 flex flex-col  items-center justify-end pb-10">
                            <div className="w-[87%]">
                            <h1 className={`text-white text-xl md:text-5xl  ${language === "en" ? "" : "text-5xl md:text-7xl"}`}>
-                           Contact Us <br /> <br/> Home >> Contact Us
+                           {t("contactUs")} <br /> <br/>{language === "en" ? "Home >> Contact Us" : "الرئيسية >> تواصل معنا"}
                             </h1>
                            </div>
                             
@@ -30,7 +30,6 @@ function ContactUsForm() {
                     </div>
                 </div>
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 ">
-        <h1 className="lg:text-5xl text-3xl  mb-10 ">{t("getIn")}</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-12">
           {/* Left Section */}

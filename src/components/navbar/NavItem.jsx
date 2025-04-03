@@ -19,9 +19,9 @@ function NavItem() {
           <NavLink
             to={item.to}
             className={({ isActive }) =>
-              `px-4 xl:px-6 h-10 min-w-[112px] flex items-center justify-center rounded-[20px] relative transition-all duration-300 ${language === "ar" ? "font-noto" : "font-sans"
+              `px-4 xl:px-6 h-10 min-w-[112px] flex items-center justify-center rounded-[20px] relative  ${language === "ar" ? "font-noto" : "font-sans"
               } border-2 ${isActive
-                ? "border-[#4283C6] text-white me-5"
+                ? `border-[#4283C6] text-white  ${item.to === "/about" ? "me-5" : null}`
                 : "border-transparent text-white hover:text-[#4283C6]"
               }`
             }

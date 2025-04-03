@@ -58,7 +58,7 @@ function NavBar() {
                 w-1/2 sm:w-1/3 md:w-1/4 bg-[#0A1A33] text-white 
                 transform sidebar 
                 ${isSidebarOpen ? 'translate-x-0' : language === 'ar' ? 'translate-x-full' : '-translate-x-full'} 
-                transition-transform duration-300`}
+               `}
                 >
                     {/* Sidebar content */}
                     <Menu sideBar={toggleSidebar}/>

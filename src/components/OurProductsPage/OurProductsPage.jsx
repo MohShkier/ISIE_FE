@@ -48,13 +48,9 @@ function OurProductsPage() {
   }, [currentPage]);
 
   return (
-    <div className="w-full flex flex-col items-center pt-36 lg:pt-44 lg:mb-10 mb-20 min-h-screen">
+    <div className="w-full flex flex-col items-center py-12 lg:mb-10 mb-20 min-h-screen">
      
-      <div className="flex items-center w-full max-w-[1550px] mx-auto px-3 sm:px-12">
-        <h2 className="lg:text-5xl text-3xl text-gray-800">
-        {t("ourProducts")}
-        </h2>
-      </div>
+     
 
       <div className="mt-16 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 gap-y-6 md:gap-8 w-full max-w-[1550px] sm:px-12 px-3">
   {loading ? (

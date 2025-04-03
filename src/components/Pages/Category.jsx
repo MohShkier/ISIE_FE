@@ -43,13 +43,34 @@ function CategoryPage() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col items-center pt-36 lg:pt-44 lg:mb-10 mb-20 ">
+    <>
+    <div className="relative w-full ">
+        {/* Background Image with Overlay */}
+        <div className=" min-h-[350px] md:min-h-[550px] relative w-full mb-auto  flex justify-center !items-center ">
+          <img
+            src="/producthero.jpg"
+            alt="About Us Background"
+            className="absolute inset-0 w-full lg:min-h-[550px] h-full !object- md:!object-cover"
+          />
+          {/* Semi-transparent overlay */}
+          <div className="absolute inset-0 bg-[#1D2736]/50"></div>
 
-      <div className="flex items-center w-full max-w-[1550px] mx-auto px-3 sm:px-12">
-        <h2 className="lg:text-5xl text-3xl text-gray-800">
-          {t("categories")}
-        </h2>
+          {/* Text Content (Above Overlay) */}
+          <div className="absolute inset-0 flex flex-col  items-center justify-end pb-10">
+            <div className="w-[87%]">
+              <h1 className={`text-white text-xl md:text-5xl  ${language === "en" ? "" : "text-5xl md:text-7xl"}`}>
+              {t("ourProducts")}
+              <br /> <br />{language === "en" ? `Home >> Our Products` : ` الرئيسية >> منتجاتنا`}
+              </h1>
+            </div>
+
+
+          </div>
+        </div>
       </div>
+
+    <div className="w-full flex flex-col items-center py-12 lg:mb-10 mb-20 ">
+
 
       <div className="mt-16 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 gap-y-6 md:gap-8 w-full max-w-[1550px] sm:px-12 px-3">
         {loading ? (
@@ -94,6 +115,7 @@ function CategoryPage() {
         )}
       </div>
     </div>
+    </>
   );
 }
 
