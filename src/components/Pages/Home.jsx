@@ -14,7 +14,7 @@ function Home() {
                 {/* Background Image with Overlay */}
                 <div className=" min-h-screen max-h-screen relative w-full mb-auto  flex justify-center !items-center">
                     <img
-                        src="/homeherobanner.png"
+                        src="/homehero_compressed.jpg"
                         alt="About Us Background"
                         className="absolute inset-0 w-full lg:min-h-screen h-full object-cover "
                     />
