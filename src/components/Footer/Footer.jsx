@@ -56,13 +56,13 @@ const Footer = () => {
   
     {/* Gear Image Positioned to Bottom Right */}
     <img
-      src="/gearFooter.png"
-      className="md:absolute right-0 bottom-0 size-28 hidden md:block"
+      src="/gearFooterUnder.png"
+      className="md:absolute right-0 bottom-0 h-[9rem] w-[9rem] hidden lg:block"
       alt="Gear Decoration"
     />
 
 <div className="w-full text-center flex justify-center flex-col items-center bg-[#0a192f] py-6 text-white">
-        <hr className="w-[80%] border-t border-[#3887FD] mb-2" />
+        <hr className="w-[75%] border-t border-[#3887FD] mb-2" />
         <p className="text-sm font-sans">Copyright © 2025 ISIE | Developed By <span className="font-bold">GentleTech</span></p>
       </div>
     </footer>

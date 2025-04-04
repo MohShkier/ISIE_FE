@@ -96,8 +96,8 @@ function CategoryDetails() {
           {/* Text Content (Above Overlay) */}
           <div className="absolute inset-0 flex flex-col  items-center justify-end pb-10">
             <div className="w-[87%]">
-              <h1 className={`text-white text-xl md:text-3xl  ${language === "en" ? "" : "text-5xl md:text-7xl"}`}>
-              {language === "ar" ? ` ${categoryName}` : `${categoryName}`}
+            <h1 className={`text-white text-xl md:text-4xl  `}>
+            {language === "ar" ? ` ${categoryName}` : `${categoryName}`}
               <br /> <br />{language === "en" ? `Home >> Category >>  ${categoryName}` :` الرئيسية >> الفئات >> ${categoryName}`}
               </h1>
             </div>
